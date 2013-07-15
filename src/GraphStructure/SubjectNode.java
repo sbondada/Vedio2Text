@@ -6,9 +6,11 @@ import java.util.Iterator;
 public class SubjectNode implements Node{
 	
 	ArrayList<Connection> connectionList;
-	public SubjectNode()
+	String name;
+	public SubjectNode(String name)
 	{
 		connectionList=new ArrayList<Connection>();
+		this.name=name;
 	}
 	public Iterator<Connection> listConnections()
 	{
@@ -43,6 +45,7 @@ public class SubjectNode implements Node{
 			if(next.connectionRight.equals(n))
 			{
 				connectionList.remove(next);
+				break;
 			}
 		}
 		n.removeConnection(next);

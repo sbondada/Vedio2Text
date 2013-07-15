@@ -7,9 +7,11 @@ import java.util.Iterator;
 public class VerbNode implements Node{
 	
 	ArrayList<Connection> connectionList;
-	public VerbNode()
+	String name;
+	public VerbNode(String name)
 	{
 		connectionList=new ArrayList<Connection>();
+		this.name=name;
 	}
 	public Iterator<Connection> listConnections()
 	{
@@ -41,9 +43,10 @@ public class VerbNode implements Node{
 		while (Itr.hasNext())
 		{
 			next=Itr.next();
-			if(next.connectionRight.equals(n))
+			if(next.connectionRight.equals(n)|| next.connectionLeft.equals(n))
 			{
 				connectionList.remove(next);
+				break;
 			}
 		}
 		n.removeConnection(next);

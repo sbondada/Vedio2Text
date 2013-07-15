@@ -6,10 +6,13 @@ import java.util.Iterator;
 public class ObjectNode implements Node {
 	
 	ArrayList<Connection> connectionList;
-	public ObjectNode()
+	String name;
+	public ObjectNode(String name)
 	{
 		connectionList=new ArrayList<Connection>();
+		this.name=name;
 	}
+	
 	public Iterator<Connection> listConnections()
 	{
 		Iterator<Connection> conItr=connectionList.iterator();
@@ -18,7 +21,9 @@ public class ObjectNode implements Node {
 
 	public void connect(Node n) 
 	{
-		
+		Connection newCon = new Connection(this,n,1.0);
+		connectionList.add(newCon);
+		n.addConnection(newCon);
 	}
 	
 	public void addConnection(Connection c)
@@ -33,7 +38,18 @@ public class ObjectNode implements Node {
 	
 	public void disconnect(Node n) 
 	{
-	
+		Iterator<Connection> Itr =connectionList.iterator();
+		Connection next=null;
+		while (Itr.hasNext())
+		{
+			next=Itr.next();
+			if(next.connectionLeft.equals(n)|| next.connectionRight.equals(n))
+			{
+				connectionList.remove(next);
+				break;
+			}
+		}
+		n.removeConnection(next);
 	}
 	
 }

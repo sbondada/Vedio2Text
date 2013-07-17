@@ -2,19 +2,16 @@ package Parser;
 
 
 	import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.io.StringReader;
 
-	import edu.stanford.nlp.process.TokenizerFactory;
-import edu.stanford.nlp.process.CoreLabelTokenFactory;
-import edu.stanford.nlp.process.DocumentPreprocessor;
-import edu.stanford.nlp.process.PTBTokenizer;
-import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.ling.HasWord;
-import edu.stanford.nlp.ling.Sentence;
-import edu.stanford.nlp.trees.*;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
+import edu.stanford.nlp.process.DocumentPreprocessor;
+import edu.stanford.nlp.trees.GrammaticalStructure;
+import edu.stanford.nlp.trees.GrammaticalStructureFactory;
+import edu.stanford.nlp.trees.PennTreebankLanguagePack;
+import edu.stanford.nlp.trees.Tree;
+import edu.stanford.nlp.trees.TreebankLanguagePack;
 
 public class SVOextracter {
 	  /**
@@ -28,8 +25,8 @@ public class SVOextracter {
 	    LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 	    if (args.length > 0) {
 	      demoDP(lp, args[0]);
-	    } else {
-	      demoAPI(lp);
+//	    } else {
+//	      demoAPI(lp);
 	    }
 	  }
 
@@ -52,50 +49,23 @@ public class SVOextracter {
 	      System.out.println();
 
 	      GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
+	      // the main purpose to get the dependencies in Collection
 	      Collection tdl = gs.typedDependenciesCCprocessed();
-	      System.out.println(gs.dependencies());
-	      System.out.println(tdl);
-	      System.out.println();
+	      System.out.println("Total dependencies  "+gs.dependencies());
+	      System.out.println("Relation  "+gs.dependencies().iterator().next());
+	      System.out.println("Governor  "+gs.dependencies().iterator().next().governor());
+	      System.out.println("Dependent  "+gs.dependencies().iterator().next().dependent());
+	      System.out.println("name  "+gs.dependencies().iterator().next().name());
+	      
+	      System.out.println("--------------------------------------------------------------------------------------------------------");
+	      //this seems to work
+	      System.out.println("Total Dependencies  "+gs.typedDependencies());
+	      System.out.println("Relation  "+gs.typedDependencies().iterator().next());
+	      System.out.println("Governor  "+gs.typedDependencies().iterator().next().gov());
+	      System.out.println("Dependent  "+gs.typedDependencies().iterator().next().dep());
+	      System.out.println("Dependency type  "+gs.typedDependencies().iterator().next().reln());
+	      
 	    }
 	  }
 
-	  /**
-	   * demoAPI demonstrates other ways of calling the parser with
-	   * already tokenized text, or in some cases, raw text that needs to
-	   * be tokenized as a single sentence.  Output is handled with a
-	   * TreePrint object.  Note that the options used when creating the
-	   * TreePrint can determine what results to print out.  Once again,
-	   * one can capture the output by passing a PrintWriter to
-	   * TreePrint.printTree.
-	   */
-	  public static void demoAPI(LexicalizedParser lp) {
-	    // This option shows parsing a list of correctly tokenized words
-	    String[] sent = { "This", "is", "an", "easy", "sentence", "." };
-	    List<CoreLabel> rawWords = Sentence.toCoreLabelList(sent);
-	    Tree parse = lp.apply(rawWords);
-	    parse.pennPrint();
-	    System.out.println();
-
-	    // This option shows loading and using an explicit tokenizer
-	    String sent2 = "This is another sentence.";
-	    TokenizerFactory<CoreLabel> tokenizerFactory =
-	      PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
-	    List<CoreLabel> rawWords2 =
-	      tokenizerFactory.getTokenizer(new StringReader(sent2)).tokenize();
-	    parse = lp.apply(rawWords2);
-
-	    TreebankLanguagePack tlp = new PennTreebankLanguagePack();
-	    GrammaticalStructureFactory gsf = tlp.grammaticalStructureFactory();
-	    GrammaticalStructure gs = gsf.newGrammaticalStructure(parse);
-	    List<TypedDependency> tdl = gs.typedDependenciesCCprocessed();
-	    System.out.println(tdl);
-	    System.out.println();
-
-	    TreePrint tp = new TreePrint("penn,typedDependenciesCollapsed");
-	    tp.printTree(parse);
-	  }
-
-	  private SVOextracter() {} // static methods only
-
-	}
-
+}

@@ -1,62 +1,29 @@
 package GraphStructure;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
-public class SubjectCollection {
-ArrayList<SubjectNode> NodeCollection;
+public class SubjectCollection extends CollectionClass {
+	
+LinkedHashMap<String,SubjectNode> NodeCollection;
 	
 	public SubjectCollection()
 	{
-		NodeCollection=new ArrayList<SubjectNode>();
+		NodeCollection=new LinkedHashMap<String,SubjectNode>();
 	}
 	public SubjectNode addNode(String name)
 	{
 		SubjectNode subnode =new SubjectNode(name);
-		NodeCollection.add(subnode);
+		NodeCollection.put(name,subnode);
 		return subnode;
 	}
     public void removeNode(String name)
     {
-    	SubjectNode n=searchNode(name);
-    	if (n==null)
-    	{
-    		System.out.println("No Node of such name exist");
-    	}
-    	Iterator<Connection> Itr = n.listConnections();
-    	while(Itr.hasNext())
-    	{
-    		Connection con=Itr.next();
-    		if(!con.connectionLeft.equals(n))
-    		{
-    			con.connectionLeft.disconnect(n);
-    			n.removeConnection(con);
-    		}
-    		else
-    		{
-    			con.connectionRight.disconnect(n);
-    			n.removeConnection(con);
-    		}
-    	}
-    	NodeCollection.remove(n);
+    	NodeCollection.remove(name);	
     }
-    public SubjectNode searchNode(String name)
+    public Iterator<SubjectNode> listNodeCollection()
     {
-    	Iterator<SubjectNode> nodeItr=NodeCollection.iterator();
-    	while(nodeItr.hasNext())
-    	{
-    		SubjectNode subnode=nodeItr.next();
-    		if(subnode.name==name)
-    		{
-    			return subnode;
-    		}
-    		else
-    		{
-    			System.out.println("No node of such name exists");
-    			return null;
-    		}
-    	}
-		return null;
+    	Iterator<SubjectNode> subjnodecoll=NodeCollection.values().iterator();
+    	return subjnodecoll;
     }
-    
 }

@@ -1,10 +1,10 @@
 package GraphStructure;
 
-import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public abstract class CollectionClass 
 {	
-	ArrayList<Node> NodeCollection;
+	LinkedHashMap<String,Node> NodeCollection;
 	public void addNode(Node n){};
     public void removeNode(Node n){}; 
 }

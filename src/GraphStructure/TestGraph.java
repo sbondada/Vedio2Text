@@ -7,7 +7,7 @@ public class TestGraph {
 		TriPartiteGraph tpgraph = new TriPartiteGraph();
 		Node n2=tpgraph.subcol.addNode("hello");
 		Node n1=tpgraph.verbcol.addNode("ride");
-		n1.connect(n2);
+		n1.connect(n2,2.11);
 	}
 
 }

@@ -18,9 +18,9 @@ public class SubjectNode implements Node{
 		return conItr;
 	}
 
-	public void connect(Node n) 
+	public void connect(Node n,Double weight) 
 	{
-		Connection newCon = new Connection(this,n,1.0);
+		Connection newCon = new Connection(this,n,weight);
 		connectionList.add(newCon);
 		n.addConnection(newCon);
 	}

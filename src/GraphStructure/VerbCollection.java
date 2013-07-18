@@ -1,63 +1,29 @@
 package GraphStructure;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
-public class VerbCollection {
-ArrayList<VerbNode> NodeCollection;
+public class VerbCollection extends CollectionClass{
+LinkedHashMap<String,VerbNode> NodeCollection;
 
 public VerbCollection()
 {
-	NodeCollection=new ArrayList<VerbNode>();
+	NodeCollection=new LinkedHashMap<String,VerbNode>();
 }
 	
 public VerbNode addNode(String name)
 {
 	VerbNode vernode =new VerbNode(name);
-	NodeCollection.add(vernode);
+	NodeCollection.put(name,vernode);
 	return vernode;
 }
 public void removeNode(String name)
-{
-	VerbNode n=searchNode(name);
-	if (n==null)
-	{
-		System.out.println("No Node of such name exist");
-	}
-	Iterator<Connection> Itr = n.listConnections();
-	while(Itr.hasNext())
-	{
-		Connection con=Itr.next();
-		if(!con.connectionLeft.equals(n))
-		{
-			con.connectionLeft.disconnect(n);
-			n.removeConnection(con);
-		}
-		else
-		{
-			con.connectionRight.disconnect(n);
-			n.removeConnection(con);
-		}
-	}
-	NodeCollection.remove(n);
+{	
+	NodeCollection.remove(name);
 }
-public VerbNode searchNode(String name)
+public Iterator<VerbNode> listNodeCollection()
 {
-	Iterator<VerbNode> nodeItr=NodeCollection.iterator();
-	while(nodeItr.hasNext())
-	{
-		VerbNode verbnode=nodeItr.next();
-		if(verbnode.name==name)
-		{
-			return verbnode;
-		}
-		else
-		{
-			System.out.println("No node of such name exists");
-			return null;
-		}
-	}
-	return null;
+	Iterator<VerbNode> verbnodecoll=NodeCollection.values().iterator();
+	return verbnodecoll;
 }
-
 }

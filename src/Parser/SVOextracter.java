@@ -92,10 +92,10 @@ public class SVOextracter
 			 }
 			 
 		  }
-		  Iterator SVOitr=SV.keySet().iterator();
+		  Iterator<String> SVOitr=SV.keySet().iterator();
 		  while(SVOitr.hasNext())
 		  {
-			  String s=SVOitr.next().toString();
+			  String s=SVOitr.next();
 			  String v=SV.get(s);
 			 // System.out.println(VO.keySet());
 			  if (VO.containsKey(v))
@@ -116,7 +116,7 @@ public class SVOextracter
 				  }
 			  }
 		  }
-		//  System.out.println(subjverbobj.values());
+		 System.out.println(subjverbobj.values());
 	  }
 
 }

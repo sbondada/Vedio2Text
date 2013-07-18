@@ -5,14 +5,25 @@ import java.util.Iterator;
 
 public class ObjectCollection extends CollectionClass 
 {
-	ArrayList<Node> NodeCollection;
+	ArrayList<ObjectNode> NodeCollection;
 	
-	public void addNode(Node n)
+	public ObjectCollection()
 	{
-		NodeCollection.add(n);
+		NodeCollection=new ArrayList<ObjectNode>();
 	}
-    public void removeNode(Node n)
+	public ObjectNode addNode(String name)
+	{
+		ObjectNode objnode =new ObjectNode(name);
+		NodeCollection.add(objnode);
+		return objnode;
+	}
+    public void removeNode(String name)
     {
+    	ObjectNode n=searchNode(name);
+    	if (n==null)
+    	{
+    		System.out.println("No Node of such name exist");
+    	}
     	Iterator<Connection> Itr = n.listConnections();
     	while(Itr.hasNext())
     	{
@@ -29,5 +40,23 @@ public class ObjectCollection extends CollectionClass
     		}
     	}
     	NodeCollection.remove(n);
+    }
+    public ObjectNode searchNode(String name)
+    {
+    	Iterator<ObjectNode> nodeItr=NodeCollection.iterator();
+    	while(nodeItr.hasNext())
+    	{
+    	    ObjectNode objnode=nodeItr.next();
+    		if(objnode.name==name)
+    		{
+    			return objnode;
+    		}
+    		else
+    		{
+    			System.out.println("No node of such name exists");
+    			return null;
+    		}
+    	}
+		return null;
     }
 }

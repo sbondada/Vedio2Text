@@ -31,6 +31,13 @@ public class SVOextracter
 		  LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		  SVOextracter s=new SVOextracter();
 		  s.sentenceSplit(lp, args[0]);
+//		  just for the purpose of viewing output
+		  Iterator<String> SVOitr= s.subjverbobj.keySet().iterator();
+		  while(SVOitr.hasNext())
+		  {	
+			  System.out.println("SVO triplet "+ SVOitr.next().toString());
+		  }
+		
 	  }
 
 	  public void sentenceSplit(LexicalizedParser lp, String filename) 
@@ -58,7 +65,7 @@ public class SVOextracter
 		  while (Depitr.hasNext())
 		  {
 			 TypedDependency Dep = Depitr.next();
-			 if(Dep.reln().getShortName()=="nsubj")
+			 if(Dep.reln().getShortName().equals("nsubj"))
 			 {
 				 String[] subject=Dep.dep().toString().split("-");
 				 String[] verb=Dep.gov().toString().split("-");
@@ -72,9 +79,9 @@ public class SVOextracter
 				 {
 					 subjverb.put(key,1);
 				 }		
-				 System.out.println(key);
+				 System.out.println("subjverb "+key);
 			 }
-			 if(Dep.reln().getShortName()=="dobj")
+			 if(Dep.reln().getShortName().equals("dobj"))
 			 {
 			 	String[] object=Dep.dep().toString().split("-");
 			 	String[] verb=Dep.gov().toString().split("-");
@@ -88,23 +95,36 @@ public class SVOextracter
 				 {
 					 verbobj.put(key,1);
 				 }
-				 System.out.println(key);
+				 System.out.println("verbonj "+key);
 			 }
 			 
 		  }
-		  Iterator<String> SVOitr=SV.keySet().iterator();
-		  while(SVOitr.hasNext())
+		  Iterator<String> SVitr=SV.keySet().iterator();
+		  while(SVitr.hasNext())
 		  {
-			  String s=SVOitr.next();
+			  String s=SVitr.next();
 			  String v=SV.get(s);
-			 // System.out.println(VO.keySet());
 			  if (VO.containsKey(v))
 			  {
 				  String[] sparts=s.split("-");
 				  String[] vparts=v.split("-");
+				  if(subjverb.get(sparts[0]+"-"+vparts[0])-1==0)
+				  {
+				  subjverb.remove(sparts[0]+"-"+vparts[0]) ;
+				  }
+				  else
+				  {
 				  subjverb.put(sparts[0]+"-"+vparts[0],subjverb.get(sparts[0]+"-"+vparts[0])-1);
+				  }
 				  String[] oparts=VO.get(v).split("-");
-				  verbobj.put(vparts[0]+"-"+oparts[0],verbobj.get(vparts[0]+"-"+oparts[0])-1);
+				  if(verbobj.get(vparts[0]+"-"+oparts[0])-1==0)
+				  {
+					  verbobj.remove(vparts[0]+"-"+oparts[0]) ;
+				  }
+				  else
+				  {
+					  verbobj.put(vparts[0]+"-"+oparts[0],verbobj.get(vparts[0]+"-"+oparts[0])-1);
+				  }
 				  String SVOkey=sparts[0]+"-"+vparts[0]+"-"+oparts[0];
 				  if(subjverbobj.containsKey(SVOkey))
 				  {
@@ -116,7 +136,5 @@ public class SVOextracter
 				  }
 			  }
 		  }
-		 System.out.println(subjverbobj.values());
-	  }
-
+	}
 }

@@ -1,54 +1,67 @@
 package GraphStructure;
 
-import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class SubjectNode implements Node{
 	
-	ArrayList<Connection> connectionList;
+	LinkedHashMap<String,Connection> connectionmap;
 	String name;
 	public SubjectNode(String name)
 	{
-		connectionList=new ArrayList<Connection>();
+		connectionmap=new LinkedHashMap<String,Connection>();
 		this.name=name;
 	}
 	public Iterator<Connection> listConnections()
 	{
-		Iterator<Connection> conItr=connectionList.iterator();
+		Iterator<Connection> conItr=connectionmap.values().iterator();
 		return conItr;
 	}
 
 	public void connect(Node n,Double weight) 
 	{
+		if(n.getClass().toString().equals("class GraphStructure.VerbNode"))
+		{
+		VerbNode cn=(VerbNode)n;
 		Connection newCon = new Connection(this,n,weight);
-		connectionList.add(newCon);
-		n.addConnection(newCon);
+		connectionmap.put(this.name+"-"+cn.name, newCon);
+		cn.addConnection(cn.name+"-"+this.name,newCon);
+		}
+		else
+		{
+		ObjectNode cn=(ObjectNode)n;
+		Connection newCon = new Connection(this,n,weight);
+		connectionmap.put(this.name+"-"+cn.name, newCon);
+		cn.addConnection(cn.name+"-"+this.name,newCon);
+		}
+		
 	}
 	
-	public void addConnection(Connection c)
+	public void addConnection(String conname,Connection c)
 	{
-		connectionList.add(c);
+		connectionmap.put(conname, c);
 	}
 	
-	public void removeConnection(Connection c)
+	public void removeConnection(String conname)
 	{
-		connectionList.remove(c);
+		connectionmap.remove(conname);
 	}
 	
 	public void disconnect(Node n) 
-	{
-		Iterator<Connection> Itr =connectionList.iterator();
-		Connection next=null;
-		while (Itr.hasNext())
+	{ 
+		if(n.getClass().toString().equals("class GraphStructure.VerbNode"))
 		{
-			next=Itr.next();
-			if(next.connectionRight.equals(n))
-			{
-				connectionList.remove(next);
-				break;
-			}
+		VerbNode cn=(VerbNode)n;
+		connectionmap.remove(this.name+"-"+cn.name);
+		cn.removeConnection(cn.name+"-"+this.name);
 		}
-		n.removeConnection(next);
+		else
+		{
+		ObjectNode cn=(ObjectNode)n;
+		connectionmap.remove(this.name+"-"+cn.name);
+		cn.removeConnection(cn.name+"-"+this.name);
+		}
+		
 	}
 		
 }

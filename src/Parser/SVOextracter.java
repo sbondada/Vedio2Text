@@ -39,7 +39,6 @@ public class SVOextracter
 		  }
 		
 	  }
-
 	  public void sentenceSplit(LexicalizedParser lp, String filename) 
 	  {
 		  TreebankLanguagePack tlp = new PennTreebankLanguagePack();

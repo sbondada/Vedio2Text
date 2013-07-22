@@ -60,6 +60,7 @@ public class SVOextracter
 //		  System.out.println("Governor  "+gs.typedDependencies().iterator().next().gov());
 //		  System.out.println("Dependent  "+gs.typedDependencies().iterator().next().dep());
 //		  System.out.println("Dependency type  "+gs.typedDependencies().iterator().next().reln());
+		  
 		  Iterator<TypedDependency> Depitr = gs.typedDependencies().iterator();
 		  while (Depitr.hasNext())
 		  {

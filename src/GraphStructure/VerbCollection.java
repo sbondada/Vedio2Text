@@ -10,7 +10,7 @@ public VerbCollection()
 {
 	NodeCollection=new LinkedHashMap<String,VerbNode>();
 }
-	
+
 public VerbNode addNode(String name)
 {
 	VerbNode vernode =new VerbNode(name);
@@ -25,5 +25,9 @@ public Iterator<VerbNode> listNodeCollection()
 {
 	Iterator<VerbNode> verbnodecoll=NodeCollection.values().iterator();
 	return verbnodecoll;
+}
+public LinkedHashMap<String,VerbNode> getNodeCollection()
+{
+	return NodeCollection;
 }
 }

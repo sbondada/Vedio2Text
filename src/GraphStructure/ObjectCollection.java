@@ -26,4 +26,9 @@ public class ObjectCollection extends CollectionClass
     	Iterator<ObjectNode> objnodecoll=NodeCollection.values().iterator();
     	return objnodecoll;
     }
+    
+    public LinkedHashMap<String,ObjectNode> getNodeCollection()
+    {
+    	return NodeCollection;
+    }
 }

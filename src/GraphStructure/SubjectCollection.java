@@ -26,4 +26,9 @@ LinkedHashMap<String,SubjectNode> NodeCollection;
     	Iterator<SubjectNode> subjnodecoll=NodeCollection.values().iterator();
     	return subjnodecoll;
     }
+    
+    public LinkedHashMap<String,SubjectNode> getNodeCollection()
+    {
+    	return NodeCollection;
+    }
 }

@@ -18,7 +18,7 @@ public class SubjectNode implements Node{
 		return conItr;
 	}
 
-	public void connect(Node n,Double weight) 
+	public void connect(Node n,int weight) 
 	{
 		if(n.getClass().toString().equals("class GraphStructure.VerbNode"))
 		{
@@ -62,6 +62,11 @@ public class SubjectNode implements Node{
 		cn.removeConnection(cn.name+"-"+this.name);
 		}
 		
+	}
+	
+	public LinkedHashMap<String,Connection> getConnectionMap()
+	{
+		return connectionmap;
 	}
 		
 }

@@ -12,5 +12,19 @@ public class TriPartiteGraph {
 	this.verbcol=new VerbCollection();
 	this.objcol=new  ObjectCollection();
 	}
+	
+	public SubjectCollection getsubcol()
+	{
+	return subcol;	
+	}
 
+	public VerbCollection getverbcol()
+	{
+	return verbcol;	
+	}
+	
+	public ObjectCollection getobjcol()
+	{
+	return objcol;	
+	}
 }

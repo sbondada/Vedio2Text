@@ -18,7 +18,7 @@ public class ObjectNode implements Node {
 		return conItr;
 	}
 
-	public void connect(Node n,Double weight) 
+	public void connect(Node n,int weight) 
 	{
 		if(n.getClass().toString().equals("class GraphStructure.VerbNode"))
 		{
@@ -60,5 +60,10 @@ public class ObjectNode implements Node {
 		connectionmap.remove(this.name+"-"+cn.name);
 		cn.removeConnection(cn.name+"-"+this.name);
 		}
+	}
+	
+	public LinkedHashMap<String,Connection> getConnectionMap()
+	{
+		return connectionmap;
 	}
 }

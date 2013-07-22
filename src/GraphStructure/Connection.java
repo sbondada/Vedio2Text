@@ -3,11 +3,15 @@ package GraphStructure;
 public class Connection {
 	Node connectionLeft;
 	Node connectionRight;
-	Double connectionWeight;
-	public Connection (Node Left,Node Right,Double weight)
+	int connectionWeight;
+	public Connection (Node Left,Node Right,int weight)
 	{
-		connectionLeft=Left;
-		connectionRight=Right;
-		connectionWeight=weight;
+		this.connectionLeft=Left;
+		this.connectionRight=Right;
+		this.connectionWeight=weight;
+	}
+	public void setweight(int weight)
+	{
+		this.connectionWeight=weight;
 	}
 }

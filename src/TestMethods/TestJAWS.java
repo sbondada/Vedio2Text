@@ -13,8 +13,6 @@ import edu.smu.tspell.wordnet.SynsetType;
  */
 public class TestJAWS
 {
-
-
 	/**
 	 * Main entry point. The command-line arguments are concatenated together
 	 * (separated by spaces) and used as the word form to look up.
@@ -31,27 +29,36 @@ public class TestJAWS
 				buffer.append((i > 0 ? " " : "") + args[i]);
 			}
 			String wordForm = buffer.toString();
-			//  Get the synsets containing the wrod form
+			//  Get the synsets containing the word form
 			WordNetDatabase database = WordNetDatabase.getFileInstance();
 			//the way to get the baseforms(a way for stemming)
 			System.out.println(database.getBaseFormCandidates("understanding", SynsetType.VERB)[0]);
 			Synset[] synsets = database.getSynsets(wordForm,SynsetType.NOUN,true);
 			//  Display the word forms and definitions for synsets retrieved
+			
+			NounSynset nounSynset; 
+			NounSynset[] hyponyms; 
+			NounSynset[] hypernyms;
+			
 			if (synsets.length > 0)
 			{
-				System.out.println("The following synsets contain '" +
-						wordForm + "' or a possible base form " +
-						"of that text:");
 				for (int i = 0; i < synsets.length; i++)
 				{
-					System.out.println("");
-					String[] wordForms = synsets[i].getWordForms();
-					for (int j = 0; j < wordForms.length; j++)
+					nounSynset=(NounSynset)(synsets[i]);
+					hyponyms=nounSynset.getInstanceHyponyms();
+					hypernyms=nounSynset.getInstanceHypernyms();
+					System.out.println("the hyponyms are as follow");
+					for(int i1=0;i1<hyponyms.length;i1++)
 					{
-						System.out.print((j > 0 ? ", " : "") +
-								wordForms[j]);
+						System.out.println(hyponyms[i1]);
 					}
-					System.out.println(": " + synsets[i].getDefinition());
+					System.out.println(" ");
+					System.out.println("the hypernyms are as follow");
+					for(int i1=0;i1<hypernyms.length;i1++)
+					{
+						System.out.println(hypernyms[i1]);
+					}
+					System.out.println(" ");
 				}
 			}
 			else

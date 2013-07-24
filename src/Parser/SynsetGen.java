@@ -34,10 +34,16 @@ public class SynsetGen
 
 	public static void main(String Args[])
 	{
+		// main purpose is to test.
+
 		SynsetGen g=new SynsetGen();
-		SVOextracter s = new SVOextracter();
-		TriPartiteGraph t = new TriPartiteGraph();
-		g.getSynset(s, t);
+		ArrayList<Entry<String,Double>> sarray=g.getValuesSatisfyT("person",SynsetType.NOUN);
+		int i=0;
+		while (i<sarray.size())
+		{
+			System.out.println(sarray.get(i).getKey());
+			i=i+1;
+		}
 	}
 	public void getSynset(SVOextracter s,TriPartiteGraph g)
 	{
@@ -50,21 +56,27 @@ public class SynsetGen
 			Entry<String,Integer> suve=SV.next();
 			String[] svstr=suve.getKey().split("-");
 			ArrayList<Entry<String,Double>> sarray=getValuesSatisfyT(svstr[0],SynsetType.NOUN);
-			for(int i=0;i<sarray.size();i++)
+			if(sarray!=null)
 			{
-				if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+				for(int i=0;i<sarray.size();i++)
 				{
-					subjmatchind=i;
-					break;
+					if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+					{
+						subjmatchind=i;
+						break;
+					}
 				}
 			}
 			ArrayList<Entry<String,Double>> varray=getValuesSatisfyT(svstr[1],SynsetType.VERB);
-			for(int i=0;i<varray.size();i++)
+			if(varray!=null)
 			{
-				if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+				for(int i=0;i<varray.size();i++)
 				{
-					verbmatchind=i;
-					break;
+					if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+					{
+						verbmatchind=i;
+						break;
+					}
 				}
 			}
 			if(subjmatchind!=-1 && verbmatchind!=-1)
@@ -86,21 +98,27 @@ public class SynsetGen
 			Entry<String,Integer> veobj=VO.next();
 			String[] vostr=veobj.getKey().split("-");
 			ArrayList<Entry<String,Double>> varray=getValuesSatisfyT(vostr[0],SynsetType.VERB);
-			for(int i=0;i<varray.size();i++)
+			if(varray!=null)
 			{
-				if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+				for(int i=0;i<varray.size();i++)
 				{
-					verbmatchind=i;
-					break;
+					if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+					{
+						verbmatchind=i;
+						break;
+					}
 				}
 			}
 			ArrayList<Entry<String,Double>> oarray=getValuesSatisfyT(vostr[1],SynsetType.NOUN);
-			for(int i=0;i<oarray.size();i++)
+			if(oarray!=null)
 			{
-				if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+				for(int i=0;i<oarray.size();i++)
 				{
-					objmatchind=i;
-					break;
+					if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+					{
+						objmatchind=i;
+						break;
+					}
 				}
 			}
 			if(verbmatchind!=-1 && objmatchind!=-1)
@@ -123,30 +141,39 @@ public class SynsetGen
 			Entry<String,Integer> suveobj=SVO.next();
 			String[] svostr=suveobj.getKey().split("-");
 			ArrayList<Entry<String,Double>> sarray=getValuesSatisfyT(svostr[0],SynsetType.NOUN);
-			for(int i=0;i<sarray.size();i++)
+			if(sarray!=null)
 			{
-				if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+				for(int i=0;i<sarray.size();i++)
 				{
-					subjmatchind=i;
-					break;
+					if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+					{
+						subjmatchind=i;
+						break;
+					}
 				}
 			}
-			ArrayList<Entry<String,Double>> varray=getValuesSatisfyT(svostr[0],SynsetType.VERB);
-			for(int i=0;i<varray.size();i++)
+			ArrayList<Entry<String,Double>> varray=getValuesSatisfyT(svostr[1],SynsetType.VERB);
+			if(varray!=null)
 			{
-				if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+				for(int i=0;i<varray.size();i++)
 				{
-					verbmatchind=i;
-					break;
+					if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+					{
+						verbmatchind=i;
+						break;
+					}
 				}
 			}
-			ArrayList<Entry<String,Double>> oarray=getValuesSatisfyT(svostr[1],SynsetType.NOUN);
-			for(int i=0;i<oarray.size();i++)
+			ArrayList<Entry<String,Double>> oarray=getValuesSatisfyT(svostr[2],SynsetType.NOUN);
+			if(oarray!=null)
 			{
-				if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+				for(int i=0;i<oarray.size();i++)
 				{
-					objmatchind=i;
-					break;
+					if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+					{
+						objmatchind=i;
+						break;
+					}
 				}
 			}
 			if(subjmatchind!=-1 && verbmatchind!=-1 && objmatchind!=-1)
@@ -159,7 +186,8 @@ public class SynsetGen
 				else
 				{
 					this.subjverbobj.put(key, suveobj.getValue());
-				}			}
+				}			
+			}
 		}
 	}
 
@@ -167,7 +195,7 @@ public class SynsetGen
 	{
 		String word= s;
 		String[] wordForms=null;
-		LinkedHashMap<String,Double> wordMap;
+		LinkedHashMap<String,Double> wordMap=null;
 		WordNetDatabase database = WordNetDatabase.getFileInstance();
 		Synset[] synsets = database.getSynsets(word,type,true);
 		if (synsets.length > 0)
@@ -178,11 +206,14 @@ public class SynsetGen
 				wordForms=Append(wordForms,synsets[i].getWordForms());
 			}
 		}
-		wordMap=removeDupGetSim(wordForms,s);
+		if(wordForms!=null)
+		{
+			wordMap=removeDupGetSim(wordForms,s);
+		}
 		return wordMap;
 	}
 
-	private ArrayList<Entry<String,Double>> getValuesSatisfyT(String word,SynsetType type)
+	public ArrayList<Entry<String,Double>> getValuesSatisfyT(String word,SynsetType type)
 	{
 		Comparator<Entry<String,Double>> comparator = new Comparator<Entry<String,Double>>() 
 				{
@@ -194,17 +225,22 @@ public class SynsetGen
 
 				double threshold=0.5;
 				ArrayList<Entry<String,Double>> ar=new ArrayList<>();
-				ar.addAll(genSynset(word,type).entrySet());
-				Collections.sort(ar,comparator);
-				for(int i=ar.size()-1;i>0;i--)
+				LinkedHashMap<String,Double> similarset=genSynset(word,type);
+				if(similarset!=null)
 				{
-					double simval=ar.get(i).getValue();
-					if(simval<threshold)
+					ar.addAll(similarset.entrySet());
+					Collections.sort(ar,comparator);
+					for(int i=ar.size()-1;i>0;i--)
 					{
-						ar.remove(i);
+						double simval=ar.get(i).getValue();
+						if(simval<threshold)
+						{
+							ar.remove(i);
+						}
 					}
+					return ar;
 				}
-				return ar;
+				return null;
 	}
 	private String[] Append(String[] A, String[] B) 
 	{
@@ -219,6 +255,7 @@ public class SynsetGen
 	private LinkedHashMap<String,Double> removeDupGetSim(String[] s,String word)
 	{
 		LinkedHashMap<String,Double> unqmap=new LinkedHashMap<>();
+
 
 		for(int i=0;i<s.length;i++)
 		{

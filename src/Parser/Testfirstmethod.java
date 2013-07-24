@@ -1,8 +1,11 @@
-package GraphStructure;
+package Parser;
 
-public class TestGraph {
-	
-	public static void main(String[] args)
+import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
+import GraphStructure.Node;
+import GraphStructure.TriPartiteGraph;
+
+public class Testfirstmethod {
+	public static void main(String args[])
 	{
 		TriPartiteGraph tpgraph = new TriPartiteGraph();
 		String[] objects={"aeroplane","bicycle","bird","boat","bottle","person","car","bus","dog","cat","chair","table","cow","table","horse","bike","plant","sheep","sofa","monitor"};
@@ -13,19 +16,19 @@ public class TestGraph {
 		int i=0;
 		while(i<objects.length)
 		{
-			subnode[i]=tpgraph.subcol.addNode(objects[i]);
+			subnode[i]=tpgraph.getsubcol().addNode(objects[i]);
 			i=i+1;
 		}
 		i=0;
 		while(i<actions.length)
 		{
-			verbnode[i]=tpgraph.verbcol.addNode(actions[i]);
+			verbnode[i]=tpgraph.getverbcol().addNode(actions[i]);
 			i=i+1;
 		}
 		i=0;
 		while(i<objects.length)
 		{
-			objnode[i]=tpgraph.objcol.addNode(objects[i]);
+			objnode[i]=tpgraph.getobjcol().addNode(objects[i]);
 			i=i+1;
 		}
 		for(int i1=0;i1<objects.length;i1++)
@@ -42,5 +45,14 @@ public class TestGraph {
 				verbnode[i1].connect(objnode[j],0);
 			}
 		}
+		SynsetGen g=new SynsetGen();
+		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
+		SVOextracter svo=new SVOextracter();
+		svo.sentenceSplit(lp,"descriptions.txt");
+		g.getSynset(svo, tpgraph);
+		System.out.println(g.subjverb.size());
+		System.out.println(g.verbobj.size());
+		System.out.println(g.subjverbobj.size());
+		
 	}
 }

@@ -1,5 +1,11 @@
 package Parser;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+import java.util.Iterator;
+import java.util.Map.Entry;
+
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import GraphStructure.Node;
 import GraphStructure.TriPartiteGraph;
@@ -48,7 +54,39 @@ public class Testfirstmethod {
 		SynsetGen g=new SynsetGen();
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		SVOextracter svo=new SVOextracter();
-		svo.sentenceSplit(lp,"descriptions.txt");
+		svo.sentenceSplit(lp,"testdescriptions.txt");
+		// the out put is collected to a file for further review
+		PrintStream out;
+		try 
+		{
+			out = new PrintStream(new FileOutputStream("output.txt"));
+			System.setOut(out);
+			System.out.println("\n==========================================SUBJECT-VERB=============================================\n");
+			Iterator<Entry<String,Integer>> SV=svo.subjverb.entrySet().iterator();
+			while(SV.hasNext())
+			{
+				Entry<String,Integer> SVentry=SV.next();
+				System.out.println(SVentry.getValue()+"\t\t\t"+SVentry.getKey());
+			}
+			System.out.println("\n==========================================VERB-OBJECT==============================================\n");
+			Iterator<Entry<String,Integer>> VO=svo.verbobj.entrySet().iterator();
+			while(VO.hasNext())
+			{
+				Entry<String,Integer> VOentry=VO.next();
+				System.out.println(VOentry.getValue()+"\t\t\t"+VOentry.getKey());
+			}
+			System.out.println("\n======================================SUBJECT-VERB-OBJECT==========================================\n");
+			Iterator<Entry<String,Integer>> SVO=svo.subjverbobj.entrySet().iterator();
+			while(SVO.hasNext())
+			{
+				Entry<String,Integer> SVOentry=SVO.next();
+				System.out.println(SVOentry.getValue()+"\t\t\t"+SVOentry.getKey());
+			}
+		} 
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
 		g.getSynset(svo, tpgraph);
 		System.out.println(g.subjverb.size());
 		System.out.println(g.verbobj.size());

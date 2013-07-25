@@ -7,6 +7,7 @@ import java.util.List;
 import edu.stanford.nlp.ling.HasWord;
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import edu.stanford.nlp.process.DocumentPreprocessor;
+import edu.stanford.nlp.process.Morphology;
 import edu.stanford.nlp.trees.GrammaticalStructure;
 import edu.stanford.nlp.trees.GrammaticalStructureFactory;
 import edu.stanford.nlp.trees.PennTreebankLanguagePack;
@@ -31,7 +32,8 @@ public class SVOextracter
 		  LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		  SVOextracter s=new SVOextracter();
 		  s.sentenceSplit(lp, args[0]);
-//		  just for the purpose of viewing output
+		  //  just for the purpose of viewing output
+		  //  responsible for viewing the output of SVO triplets
 		  Iterator<String> SVOitr= s.subjverbobj.keySet().iterator();
 		  while(SVOitr.hasNext())
 		  {	
@@ -54,6 +56,7 @@ public class SVOextracter
 	  {
 		  HashMap<String,String> SV =new HashMap<>();
 		  HashMap<String,String> VO =new HashMap<>();
+		  Morphology m=new Morphology();
 		  
 //		  System.out.println("Total Dependencies  "+gs.typedDependencies());
 //		  System.out.println("Relation  "+gs.typedDependencies().iterator().next());
@@ -67,9 +70,13 @@ public class SVOextracter
 			 TypedDependency Dep = Depitr.next();
 			 if(Dep.reln().getShortName().equals("nsubj"))
 			 {
+				 //we split the dependent and governor because it is of form "skipped-1" and so
 				 String[] subject=Dep.dep().toString().split("-");
 				 String[] verb=Dep.gov().toString().split("-");
-				 String key=subject[0]+"-"+verb[0];
+				 //we try to convert the word to lower case and stem the word using the morphology class of Stanford parser
+				 String key=m.stem(subject[0].toLowerCase())+"-"+m.stem(verb[0].toLowerCase());
+				 /*we use an another hash map for fast finding of SVO triplets by  using two hash maps subject to verb and verb to object.we use these lists to 
+				  *identify the SVO triplets by hashing from subject to verb and verb to object*/
 				 SV.put(Dep.dep().toString(),Dep.gov().toString());
 				 if(subjverb.containsKey(key))
 				 {
@@ -79,13 +86,14 @@ public class SVOextracter
 				 {
 					 subjverb.put(key,1);
 				 }		
-				 System.out.println("subjverb "+key);
+				 // responsible for the output of the subjverbs
+//				 System.out.println("subjverb "+key);
 			 }
 			 if(Dep.reln().getShortName().equals("dobj"))
 			 {
 			 	String[] object=Dep.dep().toString().split("-");
 			 	String[] verb=Dep.gov().toString().split("-");
-			 	String key=verb[0]+"-"+object[0];
+			 	String key=m.stem(verb[0].toLowerCase())+"-"+m.stem(object[0].toLowerCase());
 			 	VO.put(Dep.gov().toString(),Dep.dep().toString());
 				 if(verbobj.containsKey(key))
 				 {
@@ -95,7 +103,8 @@ public class SVOextracter
 				 {
 					 verbobj.put(key,1);
 				 }
-				 System.out.println("verbonj "+key);
+				 // responsible for the output for verbobj
+//				 System.out.println("verbonj "+key);
 			 }
 			 
 		  }
@@ -103,29 +112,35 @@ public class SVOextracter
 		  while(SVitr.hasNext())
 		  {
 			  String s=SVitr.next();
+			  //from the subject to verb hash map we try to get the verb of the subject
 			  String v=SV.get(s);
+			  // we match the verb to the verb to object hashmap.to find if there exist any case with same verb
 			  if (VO.containsKey(v))
 			  {
+				  // we need to split because the subjects and verbs have their word order number still to it "helping-5" and so on
 				  String[] sparts=s.split("-");
 				  String[] vparts=v.split("-");
-				  if(subjverb.get(sparts[0]+"-"+vparts[0])-1==0)
+				  String subject=m.stem(sparts[0].toLowerCase());
+				  String verb=m.stem(vparts[0].toLowerCase());
+				  if(subjverb.get(subject+"-"+verb)-1==0)
 				  {
-				  subjverb.remove(sparts[0]+"-"+vparts[0]) ;
+				  subjverb.remove(subject+"-"+verb) ;
 				  }
 				  else
 				  {
-				  subjverb.put(sparts[0]+"-"+vparts[0],subjverb.get(sparts[0]+"-"+vparts[0])-1);
+				  subjverb.put(subject+"-"+verb,subjverb.get(subject+"-"+verb)-1);
 				  }
 				  String[] oparts=VO.get(v).split("-");
-				  if(verbobj.get(vparts[0]+"-"+oparts[0])-1==0)
+				  String object=m.stem(oparts[0].toLowerCase());
+				  if(verbobj.get(verb+"-"+object)-1==0)
 				  {
-					  verbobj.remove(vparts[0]+"-"+oparts[0]) ;
+					  verbobj.remove(verb+"-"+object) ;
 				  }
 				  else
 				  {
-					  verbobj.put(vparts[0]+"-"+oparts[0],verbobj.get(vparts[0]+"-"+oparts[0])-1);
+					  verbobj.put(verb+"-"+object,verbobj.get(verb+"-"+object)-1);
 				  }
-				  String SVOkey=sparts[0]+"-"+vparts[0]+"-"+oparts[0];
+				  String SVOkey=subject+"-"+verb+"-"+object;
 				  if(subjverbobj.containsKey(SVOkey))
 				  {
 					  subjverbobj.put(SVOkey,subjverbobj.get(SVOkey)+1);

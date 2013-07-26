@@ -54,7 +54,7 @@ public class Testfirstmethod {
 		SynsetGen g=new SynsetGen();
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		SVOextracter svo=new SVOextracter();
-		svo.sentenceSplit(lp,"testdescriptions.txt");
+		svo.sentenceSplit(lp,"descriptions.txt");
 		// the out put is collected to a file for further review
 		PrintStream out;
 		try 

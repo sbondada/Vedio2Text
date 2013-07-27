@@ -14,4 +14,8 @@ public class Connection {
 	{
 		this.connectionWeight=weight;
 	}
+	public int getweight()
+	{
+		return this.connectionWeight;
+	}
 }

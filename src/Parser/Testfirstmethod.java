@@ -1,10 +1,16 @@
 package Parser;
 
+import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Iterator;
 import java.util.Map.Entry;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
 
 import edu.stanford.nlp.parser.lexparser.LexicalizedParser;
 import GraphStructure.Node;
@@ -41,20 +47,21 @@ public class Testfirstmethod {
 		{
 			for(int j=0;j<actions.length;j++)
 			{
-				subnode[i1].connect(verbnode[j],0);
+				subnode[i1].connect(verbnode[j],1); //the value one only for the purpose of visualizing the graph.
 			}
 		}
 		for(int i1=0;i1<actions.length;i1++)
 		{
 			for(int j=0;j<objects.length;j++)
 			{
-				verbnode[i1].connect(objnode[j],0);
+				verbnode[i1].connect(objnode[j],1); // the value one only for the purpose of visualizing the graph.
 			}
 		}
 		SynsetGen g=new SynsetGen();
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		SVOextracter svo=new SVOextracter();
-		svo.sentenceSplit(lp,"descriptions.txt");
+		EdgeWeightGen e = new EdgeWeightGen();
+		svo.sentenceSplit(lp,"processedoutput/testsent.txt");
 		// the out put is collected to a file for further review
 		PrintStream out;
 		try 
@@ -83,14 +90,29 @@ public class Testfirstmethod {
 				System.out.println(SVOentry.getValue()+"\t\t\t"+SVOentry.getKey());
 			}
 		} 
-		catch (FileNotFoundException e) 
+		catch (FileNotFoundException ex) 
 		{
-			e.printStackTrace();
+			ex.printStackTrace();
 		}
 		g.getSynset(svo, tpgraph);
+		e.assignEdgeweight(tpgraph,g);
+		// this the code to call the Applet
+		ViewGraph v=new ViewGraph(tpgraph);
+		JFrame f = new JFrame("ViewGraph");
+		f.addWindowListener(new WindowAdapter() 
+		{
+			public void windowClosing(WindowEvent e) {System.exit(0);}
+		});
+		JApplet applet = v;
+		f.getContentPane().add("Center", applet);
+		applet.init();
+		f.pack();
+		f.setSize(new Dimension(2100,1050));
+		f.setVisible(true);
 		System.out.println(g.subjverb.size());
 		System.out.println(g.verbobj.size());
 		System.out.println(g.subjverbobj.size());
+		
 		
 	}
 }

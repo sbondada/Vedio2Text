@@ -30,8 +30,16 @@ public class SimilarityCalculationDemo {
 	}
 	public static void main(String[] args) {
 		long t0 = System.currentTimeMillis();
-		run( "horse","animal" );
-		run("animal","horse");
+		run( "speak","talk" );
+		run( "speak","smile" );
+		run( "speak","laugh" );
+		run( "speak","chew" );
+
+//		run( "player","bird" );
+//		run( "player","boat" );
+//		run( "player","person" );
+//		run( "player","cow" );
+//		run( "player","horse" );
 		long t1 = System.currentTimeMillis();
 		System.out.println( "Done in "+(t1-t0)+" msec." );
 	}

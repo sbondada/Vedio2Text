@@ -10,8 +10,10 @@ import javax.swing.*;
  * uses the Java 2D APIs to define and render the graphics and text.
  */
 
-public class ShapesDemo2D extends JApplet {
-    final static int maxCharHeight = 15;
+public class ShapesDemo2D extends JApplet 
+{
+	private static final long serialVersionUID = 1L;
+	final static int maxCharHeight = 15;
     final static int minFontSize = 6;
 
     final static Color bg = Color.white;
@@ -19,14 +21,14 @@ public class ShapesDemo2D extends JApplet {
     final static Color red = Color.red;
     final static Color white = Color.white;
 
-    final static BasicStroke stroke = new BasicStroke(2.0f);
-    final static BasicStroke wideStroke = new BasicStroke(8.0f);
+    final static BasicStroke stroke = new BasicStroke(0.2f);
+    final static BasicStroke wideStroke = new BasicStroke(8f);
 
-    final static float dash1[] = {10.0f};
-    final static BasicStroke dashed = new BasicStroke(1.0f, 
+    final static float dash1[] = {1.0f};
+    final static BasicStroke dashed = new BasicStroke(10.0f, 
                                                       BasicStroke.CAP_BUTT, 
                                                       BasicStroke.JOIN_MITER, 
-                                                      10.0f, dash1, 0.0f);
+                                                      4.0f, dash1, 4.0f);
     Dimension totalSize;
     FontMetrics fontMetrics;
 

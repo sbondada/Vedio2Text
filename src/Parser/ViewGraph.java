@@ -24,6 +24,7 @@ import GraphStructure.TriPartiteGraph;
 import GraphStructure.VerbNode;
 
 public class ViewGraph extends JApplet {
+	private static final long serialVersionUID = 1L;
 	TriPartiteGraph tpgraph;
 	public ViewGraph(TriPartiteGraph tpgraph)
 	{
@@ -92,7 +93,11 @@ public class ViewGraph extends JApplet {
 			{
 				Entry<String,Connection> entry = conitr.next();
 				g2.setStroke(new BasicStroke(entry.getValue().getweight()));
-				g2.draw(new Line2D.Double((float)subjx,(float)subjy+(incs*step),(float)verbx+shiftx,(float)verby+(incv*step)+shifty));
+				if(entry.getValue().getweight()!=0)
+				{
+					g2.draw(new Line2D.Double((float)subjx,(float)subjy+(incs*step),(float)verbx+shiftx,(float)verby+(incv*step)+shifty));
+
+				}
 				incv=incv+1;
 				if(incv==25)
 				{
@@ -122,7 +127,10 @@ public class ViewGraph extends JApplet {
 			{
 				Entry<String,Connection> entry = conitr.next();
 				g2.setStroke(new BasicStroke(entry.getValue().getweight()));
+				if(entry.getValue().getweight()!=0)
+				{
 				g2.draw(new Line2D.Double((float)objx,(float)objy+(inco*step),(float)verbx+shiftx,(float)verby+(incv*step)+shifty));
+				}
 				incv=incv+1;
 				if(incv==25)
 				{

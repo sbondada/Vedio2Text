@@ -47,15 +47,15 @@ public class Testfirstmethod {
 		{
 			for(int j=0;j<actions.length;j++)
 			{
-				subnode[i1].connect(verbnode[j],1); //the value one only for the purpose of visualizing the graph.
+				subnode[i1].connect(verbnode[j],0); //the value one only for the purpose of visualizing the graph.
 			}
 		}
 		for(int i1=0;i1<actions.length;i1++)
 		{
 			for(int j=0;j<objects.length;j++)
 			{
-				verbnode[i1].connect(objnode[j],1); // the value one only for the purpose of visualizing the graph.
-			}
+				verbnode[i1].connect(objnode[j],0); // the value one only for the purpose of visualizing the graph.
+			}	
 		}
 		SynsetGen g=new SynsetGen();
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
@@ -64,6 +64,7 @@ public class Testfirstmethod {
 		svo.sentenceSplit(lp,"processedoutput/testsent.txt");
 		// the out put is collected to a file for further review
 		PrintStream out;
+		PrintStream stdout=System.out;
 		try 
 		{
 			out = new PrintStream(new FileOutputStream("output.txt"));
@@ -94,7 +95,8 @@ public class Testfirstmethod {
 		{
 			ex.printStackTrace();
 		}
-		g.getSynset(svo, tpgraph);
+		System.setOut(stdout);  
+		g.getSynset(svo, tpgraph,2);
 		e.assignEdgeweight(tpgraph,g);
 		// this the code to call the Applet
 		ViewGraph v=new ViewGraph(tpgraph);

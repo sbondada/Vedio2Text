@@ -13,11 +13,19 @@ import GraphStructure.TriPartiteGraph;
 import edu.cmu.lti.lexical_db.ILexicalDatabase;
 import edu.cmu.lti.lexical_db.NictWordNet;
 import edu.cmu.lti.ws4j.RelatednessCalculator;
+import edu.cmu.lti.ws4j.impl.HirstStOnge;
+import edu.cmu.lti.ws4j.impl.JiangConrath;
+import edu.cmu.lti.ws4j.impl.LeacockChodorow;
+import edu.cmu.lti.ws4j.impl.Lesk;
+import edu.cmu.lti.ws4j.impl.Lin;
+import edu.cmu.lti.ws4j.impl.Path;
+import edu.cmu.lti.ws4j.impl.Resnik;
 import edu.cmu.lti.ws4j.impl.WuPalmer;
 import edu.cmu.lti.ws4j.util.WS4JConfiguration;
 import edu.smu.tspell.wordnet.Synset;
 import edu.smu.tspell.wordnet.SynsetType;
 import edu.smu.tspell.wordnet.WordNetDatabase;
+import edu.stanford.nlp.process.Morphology;
 
 public class SynsetGen 
 {
@@ -25,7 +33,6 @@ public class SynsetGen
 	LinkedHashMap<String,Integer> verbobj;
 	LinkedHashMap<String,Integer> subjverbobj;
 	Comparator<Entry<String,Double>> comparator;
-
 
 	public SynsetGen()
 	{
@@ -51,7 +58,8 @@ public class SynsetGen
 		int i=0;
 		while (i<sarray.size())
 		{
-			System.out.println(sarray.get(i).getKey()+sarray.get(i).getValue());
+			System.out.println(sarray.get(i).getKey()+"  " +sarray.get(i).getValue());
+			System.out.println(g.getSimilarityMeasure("person",sarray.get(i).getKey()));
 			i=i+1;
 		}
 	}
@@ -64,7 +72,8 @@ public class SynsetGen
 		{
 
 		case 1:
-
+			Morphology m=new Morphology();
+			
 			while(SV.hasNext())
 			{
 				int subjmatchind=-1,verbmatchind=-1;
@@ -77,7 +86,8 @@ public class SynsetGen
 					for(int i=0;i<sarray.size();i++)
 					{
 						//this matches the list of subject collection to the synset and if matches the flag is raised.
-						if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+						String key=m.stem(sarray.get(i).getKey().toLowerCase());
+						if(g.getsubcol().getNodeCollection().containsKey(key))
 						{
 							subjmatchind=i;
 							break;
@@ -90,7 +100,8 @@ public class SynsetGen
 					for(int i=0;i<varray.size();i++)
 					{
 						//this matches the list of verb collection to the synset and if matches the flag is raised.
-						if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+						String key=m.stem(varray.get(i).getKey().toLowerCase());
+						if(g.getverbcol().getNodeCollection().containsKey(key))
 						{
 							verbmatchind=i;
 							break;
@@ -123,7 +134,8 @@ public class SynsetGen
 					for(int i=0;i<varray.size();i++)
 					{
 						//this matches the list of verb collection to the synset and if matches the flag is raised.
-						if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+						String key=m.stem(varray.get(i).getKey().toLowerCase());
+						if(g.getverbcol().getNodeCollection().containsKey(key))
 						{
 							verbmatchind=i;
 							break;
@@ -136,7 +148,8 @@ public class SynsetGen
 					for(int i=0;i<oarray.size();i++)
 					{
 						//this matches the list of objects collection to the synset and if matches the flag is raised.
-						if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+						String key=m.stem(oarray.get(i).getKey().toLowerCase());
+						if(g.getobjcol().getNodeCollection().containsKey(key))
 						{
 							objmatchind=i;
 							break;
@@ -170,7 +183,8 @@ public class SynsetGen
 					for(int i=0;i<sarray.size();i++)
 					{
 						//this matches the list of subject collection to the synset and if matches the flag is raised.
-						if(g.getsubcol().getNodeCollection().containsKey(sarray.get(i)))
+						String key=m.stem(sarray.get(i).getKey().toLowerCase());
+						if(g.getsubcol().getNodeCollection().containsKey(key))
 						{
 							subjmatchind=i;
 							break;
@@ -183,7 +197,8 @@ public class SynsetGen
 					for(int i=0;i<varray.size();i++)
 					{
 						//this matches the list of verb collection to the synset and if matches the flag is raised.
-						if(g.getverbcol().getNodeCollection().containsKey(varray.get(i)))
+						String key=m.stem(varray.get(i).getKey().toLowerCase());
+						if(g.getverbcol().getNodeCollection().containsKey(key))
 						{
 							verbmatchind=i;
 							break;
@@ -196,7 +211,8 @@ public class SynsetGen
 					for(int i=0;i<oarray.size();i++)
 					{
 						//this matches the list of objects collection to the synset and if matches the flag is raised.
-						if(g.getobjcol().getNodeCollection().containsKey(oarray.get(i)))
+						String key=m.stem(oarray.get(i).getKey().toLowerCase());
+						if(g.getobjcol().getNodeCollection().containsKey(key))
 						{
 							objmatchind=i;
 							break;
@@ -493,7 +509,7 @@ public class SynsetGen
 				{
 					if(smatchlist.get(0).getValue() >= matchtreshold && vmatchlist.get(0).getValue() >= matchtreshold &&  omatchlist.get(0).getValue() >= matchtreshold)
 					{
-						String key=smatchlist.get(1).getKey()+"-"+vmatchlist.get(1).getKey()+"-"+omatchlist.get(1).getKey();
+						String key=smatchlist.get(0).getKey()+"-"+vmatchlist.get(0).getKey()+"-"+omatchlist.get(0).getKey();
 						// this comparision is to find if there exist the same pair which has been already matched by some other synset combination.
 						if(subjverbobj.containsKey(key))
 						{
@@ -585,6 +601,9 @@ public class SynsetGen
 		{
 			ILexicalDatabase db = new NictWordNet();
 			RelatednessCalculator rc = new WuPalmer(db);
+//			RelatednessCalculator rc =new JiangConrath(db);
+//			RelatednessCalculator rc = new LeacockChodorow(db);
+//			RelatednessCalculator rc = new Path(db);
 			WS4JConfiguration.getInstance().setMFS(true);
 			double s = rc.calcRelatednessOfWords(word1, word2);
 			return s;

@@ -32,7 +32,6 @@ public class TestJAWS
 			//  Get the synsets containing the word form
 			WordNetDatabase database = WordNetDatabase.getFileInstance();
 			//the way to get the baseforms(a way for stemming)
-			System.out.println(database.getBaseFormCandidates("understanding", SynsetType.VERB)[0]);
 			Synset[] synsets = database.getSynsets(wordForm,SynsetType.NOUN,true);
 			//  Display the word forms and definitions for synsets retrieved
 			

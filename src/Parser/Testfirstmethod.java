@@ -67,28 +67,34 @@ public class Testfirstmethod {
 		PrintStream stdout=System.out;
 		try 
 		{
-			out = new PrintStream(new FileOutputStream("output.txt"));
+			out = new PrintStream(new FileOutputStream("SVOoutput.txt"));
 			System.setOut(out);
 			System.out.println("\n==========================================SUBJECT-VERB=============================================\n");
+			System.out.println("\tCount\t\t\tSubject Verb Pairs\n");
+			
 			Iterator<Entry<String,Integer>> SV=svo.subjverb.entrySet().iterator();
 			while(SV.hasNext())
 			{
 				Entry<String,Integer> SVentry=SV.next();
-				System.out.println(SVentry.getValue()+"\t\t\t"+SVentry.getKey());
+				System.out.println("\t"+SVentry.getValue()+"\t\t\t"+SVentry.getKey());
 			}
 			System.out.println("\n==========================================VERB-OBJECT==============================================\n");
+			System.out.println("\tCount\t\t\tVerb Object Pairs\n");
+			
 			Iterator<Entry<String,Integer>> VO=svo.verbobj.entrySet().iterator();
 			while(VO.hasNext())
 			{
 				Entry<String,Integer> VOentry=VO.next();
-				System.out.println(VOentry.getValue()+"\t\t\t"+VOentry.getKey());
+				System.out.println("\t"+VOentry.getValue()+"\t\t\t"+VOentry.getKey());
 			}
 			System.out.println("\n======================================SUBJECT-VERB-OBJECT==========================================\n");
+			System.out.println("\tCount\t\t\tSentence Triplets\n");
+			
 			Iterator<Entry<String,Integer>> SVO=svo.subjverbobj.entrySet().iterator();
 			while(SVO.hasNext())
 			{
 				Entry<String,Integer> SVOentry=SVO.next();
-				System.out.println(SVOentry.getValue()+"\t\t\t"+SVOentry.getKey());
+				System.out.println("\t"+SVOentry.getValue()+"\t\t\t"+SVOentry.getKey());
 			}
 		} 
 		catch (FileNotFoundException ex) 
@@ -114,7 +120,6 @@ public class Testfirstmethod {
 		System.out.println(g.subjverb.size());
 		System.out.println(g.verbobj.size());
 		System.out.println(g.subjverbobj.size());
-		
 		
 	}
 }

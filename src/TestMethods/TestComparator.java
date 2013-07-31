@@ -48,6 +48,7 @@ public class TestComparator {
 	}
 }
 
+@SuppressWarnings("hiding")
 class MEntry<String, Double> implements Entry<String,Double> 
 {
 	private String key;

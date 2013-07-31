@@ -92,7 +92,7 @@ public class ViewGraph extends JApplet {
 			while (conitr.hasNext())
 			{
 				Entry<String,Connection> entry = conitr.next();
-				g2.setStroke(new BasicStroke(entry.getValue().getweight()));
+				g2.setStroke(new BasicStroke(setstrokeprop(g2,entry.getValue().getweight())/2));
 				if(entry.getValue().getweight()!=0)
 				{
 					g2.draw(new Line2D.Double((float)subjx,(float)subjy+(incs*step),(float)verbx+shiftx,(float)verby+(incv*step)+shifty));
@@ -126,7 +126,7 @@ public class ViewGraph extends JApplet {
 			while (conitr.hasNext())
 			{
 				Entry<String,Connection> entry = conitr.next();
-				g2.setStroke(new BasicStroke(entry.getValue().getweight()));
+				g2.setStroke(new BasicStroke(setstrokeprop(g2,entry.getValue().getweight())/2));
 				if(entry.getValue().getweight()!=0)
 				{
 				g2.draw(new Line2D.Double((float)objx,(float)objy+(inco*step),(float)verbx+shiftx,(float)verby+(incv*step)+shifty));
@@ -154,6 +154,66 @@ public class ViewGraph extends JApplet {
 		// the whole arrangement is to align the text inside the ellipse.
 		int diff=5-text.length();
 		g2.drawString(text, (float)x+25+(3*diff), (float)y+20);
+	}
+	
+	public int setstrokeprop(Graphics2D g,int weight)
+	{
+		if(weight<50)
+		{
+			g.setPaint(Color.orange);
+			return weight;
+		}
+		if(weight>=50 && weight <100)
+		{
+			g.setPaint(Color.magenta);
+			return weight-50;
+		}
+		if(weight>=100 && weight <150)
+		{
+			g.setPaint(Color.red);
+			return weight-100;
+		}
+		if(weight>=150 && weight <200)
+		{
+			g.setPaint(Color.yellow);
+			return weight-150;
+		}
+		if(weight>=200 && weight <250)
+		{
+			g.setPaint(Color.green);
+			return weight-200;
+		}
+		if(weight>=250 && weight <300)
+		{
+			g.setPaint(Color.gray);
+			return weight-250;
+		}
+		if(weight>=300 && weight <350)
+		{
+			g.setPaint(Color.blue);
+			return weight-300;
+		}
+		if(weight>=350 && weight <400)
+		{
+			g.setPaint(Color.pink);
+			return weight-350;
+		}
+		if(weight>=400 && weight <450)
+		{
+			g.setPaint(Color.black);
+			return weight-400;
+		}
+		if(weight>=450 && weight <500)
+		{
+			g.setPaint(Color.cyan);
+			return weight-450;
+		}
+		else
+		{
+			g.setPaint(Color.cyan);
+			return weight-500;
+		}
+		
 	}
 	public static void main(String s[]) 
 	{

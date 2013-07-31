@@ -1,7 +1,6 @@
 package TestMethods;
 
 import edu.smu.tspell.wordnet.*;
-import edu.smu.tspell.wordnet.SynsetType;
 
 /**
  * Displays word forms and definitions for synsets containing the word form
@@ -44,15 +43,18 @@ public class TestJAWS
 				for (int i = 0; i < synsets.length; i++)
 				{
 					nounSynset=(NounSynset)(synsets[i]);
-					hyponyms=nounSynset.getInstanceHyponyms();
-					hypernyms=nounSynset.getInstanceHypernyms();
+					hyponyms=nounSynset.getHyponyms();
+					hypernyms=nounSynset.getHypernyms();
+					hypernyms=new NounSynset[0];
 					System.out.println("the hyponyms are as follow");
+					System.out.println(hyponyms.length);
 					for(int i1=0;i1<hyponyms.length;i1++)
 					{
 						System.out.println(hyponyms[i1]);
 					}
 					System.out.println(" ");
 					System.out.println("the hypernyms are as follow");
+					System.out.println(hypernyms.length);
 					for(int i1=0;i1<hypernyms.length;i1++)
 					{
 						System.out.println(hypernyms[i1]);

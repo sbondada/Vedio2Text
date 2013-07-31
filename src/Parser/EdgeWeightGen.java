@@ -55,9 +55,9 @@ public class EdgeWeightGen
 				Connection tempsub=t.getsubcol().getNodeCollection().get(key[0]).getConnectionMap().get(key[0]+"-"+key[1]);
 				tempsub.setweight(tempsub.getweight()+SVOentry.getValue());
 				Connection tempverb = t.getverbcol().getNodeCollection().get(key[1]).getConnectionMap().get(key[1]+"-"+key[2]);
-				System.out.print("\t"+(tempsub.getweight()+SVOentry.getValue())+"\t\t\t"+key[0]+"-"+key[1]);
+				System.out.println("\t"+(tempsub.getweight()+SVOentry.getValue())+"\t\t\t"+key[0]+"-"+key[1]);
 				System.out.println("\t"+(tempverb.getweight()+SVOentry.getValue())+"\t\t\t"+key[1]+"-"+key[2]);
-				System.out.println("...........................................");
+				System.out.println("\t...........................................");
 				tempverb.setweight(tempverb.getweight()+SVOentry.getValue());
 
 			}

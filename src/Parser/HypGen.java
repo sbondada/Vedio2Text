@@ -30,6 +30,23 @@ public class HypGen {
 		this.verb=new LinkedHashMap<>();
 		this.obj=new LinkedHashMap<>();
 	}
+	public static void main(String args[])
+	{
+		// the function yet to be completed
+		HypGen h = new HypGen();
+		Iterator<Entry<String,Double>> subitr=h.subj.entrySet().iterator();
+		while(subitr.hasNext())
+		{
+			Entry<String,Double> sub=subitr.next();
+			System.out.println(sub.getKey()+"----"+sub.getValue());
+		}
+		Iterator<Entry<String,Double>> verbitr=h.verb.entrySet().iterator();
+		while(verbitr.hasNext())
+		{
+			Entry<String,Double> verb=verbitr.next();
+			System.out.println(verb.getKey()+"----"+verb.getValue());
+		}
+	}
 
 	public void getCollectionSimilarity(SVOextracter s,TriPartiteGraph t)
 	{
@@ -41,29 +58,29 @@ public class HypGen {
 			Entry<String,Integer> suve=SV.next();
 			String[] svstr=suve.getKey().split("-");
 			LinkedHashMap<String,Integer>  shyparray=findwhat(svstr[0],SynsetType.NOUN,t,1);
-			resetColSim(svstr[0], shyparray, t, 1);
+			resetColSim(svstr[0], shyparray, t, 1,suve.getValue());
 			LinkedHashMap<String,Integer>  vhyparray=findwhat(svstr[1],SynsetType.VERB,t,2);
-			resetColSim(svstr[1], vhyparray, t, 2);
+			resetColSim(svstr[1], vhyparray, t, 2,suve.getValue());
 		}
 		while(VO.hasNext())
 		{
 			Entry<String,Integer> veobj=VO.next();
 			String[] vostr=veobj.getKey().split("-");
 			LinkedHashMap<String,Integer>  vhyparray=findwhat(vostr[0],SynsetType.VERB,t,2);
-			resetColSim(vostr[0], vhyparray, t, 2);
+			resetColSim(vostr[0], vhyparray, t, 2,veobj.getValue());
 			LinkedHashMap<String,Integer>  ohyparray=findwhat(vostr[1],SynsetType.NOUN,t,3);
-			resetColSim(vostr[1], ohyparray, t, 3);
+			resetColSim(vostr[1], ohyparray, t, 3,veobj.getValue());
 		}
 		while(SVO.hasNext())
 		{
 			Entry<String,Integer> suveobj=SVO.next();
 			String[] svostr=suveobj.getKey().split("-");
 			LinkedHashMap<String,Integer>  shyparray=findwhat(svostr[0],SynsetType.NOUN,t,1);
-			resetColSim(svostr[0], shyparray, t, 1);
+			resetColSim(svostr[0], shyparray, t, 1,suveobj.getValue());
 			LinkedHashMap<String,Integer>  vhyparray=findwhat(svostr[1],SynsetType.VERB,t,2);
-			resetColSim(svostr[1], vhyparray, t, 2);
+			resetColSim(svostr[1], vhyparray, t, 2,suveobj.getValue());
 			LinkedHashMap<String,Integer>  ohyparray=findwhat(svostr[2],SynsetType.NOUN,t,3);
-			resetColSim(svostr[2], ohyparray, t, 3);
+			resetColSim(svostr[2], ohyparray, t, 3,suveobj.getValue());
 		}
 	}
 
@@ -157,8 +174,7 @@ public class HypGen {
 		return whatlist;
 	}
 
-
-	public void resetColSim(String word,LinkedHashMap<String,Integer> whatlist,TriPartiteGraph t,int set)
+	public void resetColSim(String word,LinkedHashMap<String,Integer> whatlist,TriPartiteGraph t,int set,int count)
 	{
 		switch (set)
 		{
@@ -169,11 +185,11 @@ public class HypGen {
 				String colnode=subcolitr.next();
 				if(this.subj.containsKey(colnode))
 				{
-				this.subj.put(colnode,(this.subj.get(colnode)+calculatescore(word, colnode, whatlist)));
+				this.subj.put(colnode,(this.subj.get(colnode)+calculatescore(word, colnode, whatlist,count)));
 				}
 				else
 				{
-				this.subj.put(colnode,calculatescore(word, colnode, whatlist));
+				this.subj.put(colnode,calculatescore(word, colnode, whatlist,count));
 				}
 			}
 			break;
@@ -184,11 +200,11 @@ public class HypGen {
 				String colnode=verbcolitr.next();
 				if(this.verb.containsKey(colnode))
 				{
-				this.verb.put(colnode,(this.verb.get(colnode)+calculatescore(word, colnode, whatlist)));
+				this.verb.put(colnode,(this.verb.get(colnode)+calculatescore(word, colnode, whatlist,count)));
 				}
 				else
 				{
-				this.verb.put(colnode,calculatescore(word, colnode, whatlist));
+				this.verb.put(colnode,calculatescore(word, colnode, whatlist,count));
 				}
 			}
 			break;
@@ -199,11 +215,11 @@ public class HypGen {
 				String colnode=objcolitr.next();
 				if(this.obj.containsKey(colnode))
 				{
-				this.obj.put(colnode,(this.obj.get(colnode)+calculatescore(word, colnode, whatlist)));
+				this.obj.put(colnode,(this.obj.get(colnode)+calculatescore(word, colnode, whatlist,count)));
 				}
 				else
 				{
-				this.obj.put(colnode,calculatescore(word, colnode, whatlist));
+				this.obj.put(colnode,calculatescore(word, colnode, whatlist,count));
 				}
 			}
 			break;
@@ -211,7 +227,7 @@ public class HypGen {
 		}
 	}
 
-	public Double calculatescore(String word,String colnode,LinkedHashMap<String,Integer> whatlist)
+	public Double calculatescore(String word,String colnode,LinkedHashMap<String,Integer> whatlist,int count)
 	{
 		Double bias=0.4;
 		if(whatlist.containsKey(colnode))
@@ -220,17 +236,17 @@ public class HypGen {
 			if(whatlist.get(colnode)==1)
 			{
 				cumsim=(getSimilarityMeasure(word,colnode)-bias);
-				return cumsim;
+				return (count*cumsim);
 			}
 			else
 			{
 				cumsim=(getSimilarityMeasure(word,colnode)+bias);
-				return cumsim;
+				return (count*cumsim);
 			}
 		}
 		else
 		{
-			return getSimilarityMeasure(word, colnode);
+			return (count*getSimilarityMeasure(word, colnode));
 		}
 		
 	}
@@ -244,6 +260,10 @@ public class HypGen {
 		//		RelatednessCalculator rc = new Path(db);
 		WS4JConfiguration.getInstance().setMFS(true);
 		double s = rc.calcRelatednessOfWords(word1, word2);
+		if(s>=1.7976931348623157E308) //if the word exactly matches the other word then reduce the similarity value to a bearable value
+		{
+			s=5.0;
+		}
 		return s;
 	}
 }

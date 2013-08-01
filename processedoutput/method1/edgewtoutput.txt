@@ -1,0 +1,82 @@
+
+======================================SUBJECT-VERB EDGE==============================================
+
+	Weight			Connection name
+
+	2			horse-run
+	11			car-run
+	1			aeroplane-fall
+	10			person-walk
+	1			person-pour
+	1			person-exercise
+	2			person-fall
+	1			bike-fall
+	1			cat-wave
+	3			cat-walk
+	2			person-jump
+	2			car-jump
+	4			cat-run
+	1			dog-eat
+	5			person-run
+	4			cat-fall
+	26			car-push
+	12			person-talk
+	4			dog-run
+	1			car-turn
+	2			dog-exercise
+	5			dog-jump
+	1			aeroplane-run
+	1			cat-push
+	1			car-fall
+	3			cat-jump
+	1			cat-exercise
+	1			boat-push
+	1			bicycle-run
+	1			bike-run
+	2			dog-fall
+	2			person-ride
+	1			bird-fall
+	1			table-talk
+	1			car-wave
+	3			person-push
+	9			dog-walk
+	1			bike-push
+
+======================================VERB-OBJECT EDGE==============================================
+
+	Weight			Connection name
+
+	4			throw-dog
+	2			walk-dog
+	8			ride-bike
+	6			ride-bicycle
+	3			ride-horse
+	12			push-car
+	1			hit-car
+	1			kiss-dog
+	1			talk-bicycle
+	1			brush-cat
+	1			eat-person
+	1			push-bike
+	2			run-car
+	1			ride-bus
+	1			talk-dog
+	1			jump-bike
+	1			wave-car
+
+==================================SUBJECT-VERB-OBJECT EDGE==========================================
+
+	Weight			Connection name
+
+	14			person-ride
+	14			ride-bike
+	...........................................
+	13			car-run
+	3			run-car
+	...........................................
+	5			cat-jump
+	1			jump-sofa
+	...........................................
+	3			cat-push
+	13			push-car
+	...........................................

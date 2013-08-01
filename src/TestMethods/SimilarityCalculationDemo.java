@@ -30,10 +30,7 @@ public class SimilarityCalculationDemo {
 	}
 	public static void main(String[] args) {
 		long t0 = System.currentTimeMillis();
-		run( "speak","talk" );
-		run( "speak","smile" );
-		run( "speak","laugh" );
-		run( "speak","chew" );
+		run( "turn","turn" );
 
 //		run( "player","bird" );
 //		run( "player","boat" );

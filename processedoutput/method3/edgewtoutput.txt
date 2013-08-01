@@ -1,0 +1,1872 @@
+
+======================================SUBJECT-VERB EDGE==============================================
+
+	Weight			Connection name
+
+	14437741			aeroplane-smile
+	16034168			aeroplane-laugh
+	11949601			aeroplane-chew
+	18391645			aeroplane-talk
+	0			aeroplane-smake
+	12055383			aeroplane-eat
+	14528186			aeroplane-drink
+	11900680			aeroplane-cartwheel
+	16603856			aeroplane-clap
+	15713823			aeroplane-climb
+	0			aeroplane-climb stairs
+	14375580			aeroplane-dive
+	16484218			aeroplane-fall
+	0			aeroplane-backhand flip
+	11635803			aeroplane-handstand
+	17824795			aeroplane-jump
+	-5010			aeroplane-pull up
+	0			aeroplane-push up
+	15488190			aeroplane-run
+	-23800			aeroplane-sit down
+	0			aeroplane-sit up
+	14141700			aeroplane-somersault
+	0			aeroplane-stand up
+	15063150			aeroplane-turn
+	20322533			aeroplane-walk
+	16902253			aeroplane-wave
+	14195511			aeroplane-brush
+	12952599			aeroplane-catch
+	0			aeroplane-draw sword
+	15457836			aeroplane-dribble
+	16257199			aeroplane-golf
+	14637384			aeroplane-hit
+	15785253			aeroplane-kick
+	15565462			aeroplane-pick
+	14601018			aeroplane-pour
+	18641623			aeroplane-push
+	18461982			aeroplane-ride
+	0			aeroplane-shoot ball
+	0			aeroplane-shoot bow
+	0			aeroplane-shoot gun
+	0			aeroplane-swing bat
+	17016914			aeroplane-exercise
+	17294248			aeroplane-throw
+	12994081			aeroplane-fence
+	14808931			aeroplane-hug
+	18158587			aeroplane-kiss
+	15305075			aeroplane-punch
+	0			aeroplane-shake hands
+	0			aeroplane-sword fight
+	16142452			bicycle-smile
+	17927374			bicycle-laugh
+	13360529			bicycle-chew
+	20563206			bicycle-talk
+	0			bicycle-smake
+	13478801			bicycle-eat
+	16243576			bicycle-drink
+	13305831			bicycle-cartwheel
+	18564327			bicycle-clap
+	17569205			bicycle-climb
+	0			bicycle-climb stairs
+	16072951			bicycle-dive
+	18430562			bicycle-fall
+	0			bicycle-backhand flip
+	13009680			bicycle-handstand
+	19929426			bicycle-jump
+	-5602			bicycle-pull up
+	0			bicycle-push up
+	17316931			bicycle-run
+	-26610			bicycle-sit down
+	0			bicycle-sit up
+	15811456			bicycle-somersault
+	0			bicycle-stand up
+	16841704			bicycle-turn
+	22722080			bicycle-walk
+	18897956			bicycle-wave
+	15871620			bicycle-brush
+	14481954			bicycle-catch
+	0			bicycle-draw sword
+	17282993			bicycle-dribble
+	18176739			bicycle-golf
+	16365667			bicycle-hit
+	17649068			bicycle-kick
+	17403326			bicycle-pick
+	16325007			bicycle-pour
+	20842700			bicycle-push
+	20641848			bicycle-ride
+	0			bicycle-shoot ball
+	0			bicycle-shoot bow
+	0			bicycle-shoot gun
+	0			bicycle-swing bat
+	19026156			bicycle-exercise
+	19336235			bicycle-throw
+	14528334			bicycle-fence
+	16557469			bicycle-hug
+	20302629			bicycle-kiss
+	17112195			bicycle-punch
+	0			bicycle-shake hands
+	0			bicycle-sword fight
+	18482464			bird-smile
+	20526128			bird-laugh
+	15297273			bird-chew
+	23544051			bird-talk
+	0			bird-smake
+	15432689			bird-eat
+	18598246			bird-drink
+	15234646			bird-cartwheel
+	21255414			bird-clap
+	20116039			bird-climb
+	0			bird-climb stairs
+	18402888			bird-dive
+	21102259			bird-fall
+	0			bird-backhand flip
+	14895565			bird-handstand
+	22818398			bird-jump
+	-6414			bird-pull up
+	0			bird-push up
+	19827195			bird-run
+	-30468			bird-sit down
+	0			bird-sit up
+	18103487			bird-somersault
+	0			bird-stand up
+	19283080			bird-turn
+	26015876			bird-walk
+	21637406			bird-wave
+	18172372			bird-brush
+	16581260			bird-catch
+	0			bird-draw sword
+	19788338			bird-dribble
+	20811641			bird-golf
+	18738036			bird-hit
+	20207480			bird-kick
+	19926114			bird-pick
+	18691482			bird-pour
+	23864060			bird-push
+	23634093			bird-ride
+	0			bird-shoot ball
+	0			bird-shoot bow
+	0			bird-shoot gun
+	0			bird-swing bat
+	21784190			bird-exercise
+	22139219			bird-throw
+	16634363			bird-fence
+	18957642			bird-hug
+	23245701			bird-kiss
+	19592781			bird-punch
+	0			bird-shake hands
+	0			bird-sword fight
+	15689226			boat-smile
+	17424033			boat-laugh
+	12985410			boat-chew
+	19985860			boat-talk
+	0			boat-smake
+	13100361			boat-eat
+	15787511			boat-drink
+	12932248			boat-cartwheel
+	18043103			boat-clap
+	17075921			boat-climb
+	0			boat-climb stairs
+	15621676			boat-dive
+	17913094			boat-fall
+	0			boat-backhand flip
+	12644412			boat-handstand
+	19369875			boat-jump
+	-5444			boat-pull up
+	0			boat-push up
+	16830729			boat-run
+	-25863			boat-sit down
+	0			boat-sit up
+	15367524			boat-somersault
+	0			boat-stand up
+	16368846			boat-turn
+	22084121			boat-walk
+	18367365			boat-wave
+	15425999			boat-brush
+	14075349			boat-catch
+	0			boat-draw sword
+	16797744			boat-dribble
+	17666397			boat-golf
+	15906174			boat-hit
+	17153542			boat-kick
+	16914699			boat-pick
+	15866656			boat-pour
+	20257507			boat-push
+	20062294			boat-ride
+	0			boat-shoot ball
+	0			boat-shoot bow
+	0			boat-shoot gun
+	0			boat-swing bat
+	18491966			boat-exercise
+	18793339			boat-throw
+	14120427			boat-fence
+	16092591			boat-hug
+	19732600			boat-kiss
+	16631742			boat-punch
+	0			boat-shake hands
+	0			boat-sword fight
+	16704594			bottle-smile
+	18551674			bottle-laugh
+	13825794			bottle-chew
+	21279295			bottle-talk
+	0			bottle-smake
+	13948184			bottle-eat
+	16809239			bottle-drink
+	13769191			bottle-cartwheel
+	19210808			bottle-clap
+	18181032			bottle-climb
+	0			bottle-climb stairs
+	16632673			bottle-dive
+	19072385			bottle-fall
+	0			bottle-backhand flip
+	13462727			bottle-handstand
+	20623445			bottle-jump
+	-5797			bottle-pull up
+	0			bottle-push up
+	17919973			bottle-run
+	-27537			bottle-sit down
+	0			bottle-sit up
+	16362072			bottle-somersault
+	0			bottle-stand up
+	17428197			bottle-turn
+	23513351			bottle-walk
+	19556056			bottle-wave
+	16424331			bottle-brush
+	14986271			bottle-catch
+	0			bottle-draw sword
+	17884853			bottle-dribble
+	18809723			bottle-golf
+	16935583			bottle-hit
+	18263677			bottle-kick
+	18009377			bottle-pick
+	16893506			bottle-pour
+	21568522			bottle-push
+	21360676			bottle-ride
+	0			bottle-shoot ball
+	0			bottle-shoot bow
+	0			bottle-shoot gun
+	0			bottle-swing bat
+	19688720			bottle-exercise
+	20009597			bottle-throw
+	15034266			bottle-fence
+	17134064			bottle-hug
+	21009645			bottle-kiss
+	17708107			bottle-punch
+	0			bottle-shake hands
+	0			bottle-sword fight
+	23588977			person-smile
+	26197285			person-laugh
+	19523751			person-chew
+	30049028			person-talk
+	0			person-smake
+	19696582			person-eat
+	23736750			person-drink
+	19443821			person-cartwheel
+	27128065			person-clap
+	25673893			person-climb
+	0			person-climb stairs
+	23487415			person-dive
+	26932595			person-fall
+	0			person-backhand flip
+	19011055			person-handstand
+	29122885			person-jump
+	-8186			person-pull up
+	0			person-push up
+	25305244			person-run
+	-38886			person-sit down
+	0			person-sit up
+	23105293			person-somersault
+	0			person-stand up
+	24610795			person-turn
+	33203793			person-walk
+	27615598			person-wave
+	23193211			person-brush
+	21162490			person-catch
+	0			person-draw sword
+	25255650			person-dribble
+	26561682			person-golf
+	23915162			person-hit
+	25790597			person-kick
+	25431494			person-pick
+	23855745			person-pour
+	30457453			person-push
+	30163948			person-ride
+	0			person-shoot ball
+	0			person-shoot bow
+	0			person-shoot gun
+	0			person-swing bat
+	27802936			person-exercise
+	28256056			person-throw
+	21230266			person-fence
+	24195442			person-hug
+	29668248			person-kiss
+	25006063			person-punch
+	0			person-shake hands
+	0			person-sword fight
+	17047086			car-smile
+	18932036			car-laugh
+	14109262			car-chew
+	21715582			car-talk
+	0			car-smake
+	14234162			car-eat
+	17153877			car-drink
+	14051499			car-cartwheel
+	19604684			car-clap
+	18553795			car-climb
+	0			car-climb stairs
+	16973690			car-dive
+	19463423			car-fall
+	0			car-backhand flip
+	13738751			car-handstand
+	21046285			car-jump
+	-5916			car-pull up
+	0			car-push up
+	18287383			car-run
+	-28102			car-sit down
+	0			car-sit up
+	16697541			car-somersault
+	0			car-stand up
+	17785525			car-turn
+	23995441			car-walk
+	19957011			car-wave
+	16761077			car-brush
+	15293532			car-catch
+	0			car-draw sword
+	18251543			car-dribble
+	19195375			car-golf
+	17282810			car-hit
+	18638134			car-kick
+	18378620			car-pick
+	17239872			car-pour
+	22010739			car-push
+	21798631			car-ride
+	0			car-shoot ball
+	0			car-shoot bow
+	0			car-shoot gun
+	0			car-swing bat
+	20092395			car-exercise
+	20419851			car-throw
+	15342512			car-fence
+	17485361			car-hug
+	21440403			car-kiss
+	18071174			car-punch
+	0			car-shake hands
+	0			car-sword fight
+	17143111			bus-smile
+	19038679			bus-laugh
+	14188738			bus-chew
+	21837904			bus-talk
+	0			bus-smake
+	14314342			bus-eat
+	17250503			bus-drink
+	14130650			bus-cartwheel
+	19715116			bus-clap
+	18658308			bus-climb
+	0			bus-climb stairs
+	17069301			bus-dive
+	19573060			bus-fall
+	0			bus-backhand flip
+	13816141			bus-handstand
+	21164837			bus-jump
+	-5949			bus-pull up
+	0			bus-push up
+	18390395			bus-run
+	-28260			bus-sit down
+	0			bus-sit up
+	16791597			bus-somersault
+	0			bus-stand up
+	17885710			bus-turn
+	24130606			bus-walk
+	20069427			bus-wave
+	16855491			bus-brush
+	15379680			bus-catch
+	0			bus-draw sword
+	18354353			bus-dribble
+	19303502			bus-golf
+	17380163			bus-hit
+	18743122			bus-kick
+	18482146			bus-pick
+	17336983			bus-pour
+	22134724			bus-push
+	21921421			bus-ride
+	0			bus-shoot ball
+	0			bus-shoot bow
+	0			bus-shoot gun
+	0			bus-swing bat
+	20205574			bus-exercise
+	20534875			bus-throw
+	15428935			bus-fence
+	17583855			bus-hug
+	21561175			bus-kiss
+	18172968			bus-punch
+	0			bus-shake hands
+	0			bus-sword fight
+	17126877			dog-smile
+	19020650			dog-laugh
+	14175302			dog-chew
+	21817224			dog-talk
+	0			dog-smake
+	14300786			dog-eat
+	17234167			dog-drink
+	14117269			dog-cartwheel
+	19696446			dog-clap
+	18640638			dog-climb
+	0			dog-climb stairs
+	17053137			dog-dive
+	19554524			dog-fall
+	0			dog-backhand flip
+	13803057			dog-handstand
+	21144794			dog-jump
+	-5943			dog-pull up
+	0			dog-push up
+	18372979			dog-run
+	-28233			dog-sit down
+	0			dog-sit up
+	16775696			dog-somersault
+	0			dog-stand up
+	17868772			dog-turn
+	24107755			dog-walk
+	20050422			dog-wave
+	16839529			dog-brush
+	15365116			dog-catch
+	0			dog-draw sword
+	18336972			dog-dribble
+	19285222			dog-golf
+	17363704			dog-hit
+	18725372			dog-kick
+	18464644			dog-pick
+	17320565			dog-pour
+	22113762			dog-push
+	21900662			dog-ride
+	0			dog-shoot ball
+	0			dog-shoot bow
+	0			dog-shoot gun
+	0			dog-swing bat
+	20186440			dog-exercise
+	20515429			dog-throw
+	15414324			dog-fence
+	17567203			dog-hug
+	21540757			dog-kiss
+	18155758			dog-punch
+	0			dog-shake hands
+	0			dog-sword fight
+	19379092			cat-smile
+	21521900			cat-laugh
+	16039380			cat-chew
+	24686229			cat-talk
+	0			cat-smake
+	16181366			cat-eat
+	19500492			cat-drink
+	15973715			cat-cartwheel
+	22286565			cat-clap
+	21091916			cat-climb
+	0			cat-climb stairs
+	19295656			cat-dive
+	22125980			cat-fall
+	0			cat-backhand flip
+	15618185			cat-handstand
+	23925373			cat-jump
+	-6725			cat-pull up
+	0			cat-push up
+	20789060			cat-run
+	-31946			cat-sit down
+	0			cat-sit up
+	18981731			cat-somersault
+	0			cat-stand up
+	20218548			cat-turn
+	27277969			cat-walk
+	22687089			cat-wave
+	19053958			cat-brush
+	17385656			cat-catch
+	0			cat-draw sword
+	20748317			cat-dribble
+	21821264			cat-golf
+	19647063			cat-hit
+	21187793			cat-kick
+	20892778			cat-pick
+	19598251			cat-pour
+	25021763			cat-push
+	24780639			cat-ride
+	0			cat-shoot ball
+	0			cat-shoot bow
+	0			cat-shoot gun
+	0			cat-swing bat
+	22840994			cat-exercise
+	23213245			cat-throw
+	17441336			cat-fence
+	19877323			cat-hug
+	24373406			cat-kiss
+	20543273			cat-punch
+	0			cat-shake hands
+	0			cat-sword fight
+	15831169			chair-smile
+	17581671			chair-laugh
+	13102891			chair-chew
+	20166675			chair-talk
+	0			chair-smake
+	13218882			chair-eat
+	15930343			chair-drink
+	13049248			chair-cartwheel
+	18206342			chair-clap
+	17230409			chair-climb
+	0			chair-climb stairs
+	15763008			chair-dive
+	18075157			chair-fall
+	0			chair-backhand flip
+	12758808			chair-handstand
+	19545117			chair-jump
+	-5494			chair-pull up
+	0			chair-push up
+	16983000			chair-run
+	-26097			chair-sit down
+	0			chair-sit up
+	15506556			chair-somersault
+	0			chair-stand up
+	16516938			chair-turn
+	22283919			chair-walk
+	18533538			chair-wave
+	15565560			chair-brush
+	14202691			chair-catch
+	0			chair-draw sword
+	16949716			chair-dribble
+	17826228			chair-golf
+	16050080			chair-hit
+	17308733			chair-kick
+	17067729			chair-pick
+	16010204			chair-pour
+	20440780			chair-push
+	20243801			chair-ride
+	0			chair-shoot ball
+	0			chair-shoot bow
+	0			chair-shoot gun
+	0			chair-swing bat
+	18659266			chair-exercise
+	18963365			chair-throw
+	14248177			chair-fence
+	16238184			chair-hug
+	19911124			chair-kiss
+	16782212			chair-punch
+	0			chair-shake hands
+	0			chair-sword fight
+	12818416			table-smile
+	14235789			table-laugh
+	10609344			table-chew
+	16328854			table-talk
+	0			table-smake
+	10703261			table-eat
+	12898717			table-drink
+	10565910			table-cartwheel
+	14741582			table-clap
+	13951374			table-climb
+	0			table-climb stairs
+	12763227			table-dive
+	14635362			table-fall
+	0			table-backhand flip
+	10330741			table-handstand
+	15825581			table-jump
+	-4448			table-pull up
+	0			table-push up
+	13751048			table-run
+	-21131			table-sit down
+	0			table-sit up
+	12555579			table-somersault
+	0			table-stand up
+	13373680			table-turn
+	18043175			table-walk
+	15006510			table-wave
+	12603354			table-brush
+	11499846			table-catch
+	0			table-draw sword
+	13724098			table-dribble
+	14433805			table-golf
+	12995668			table-hit
+	14014792			table-kick
+	13819653			table-pick
+	12963380			table-pour
+	16550795			table-push
+	16391302			table-ride
+	0			table-shoot ball
+	0			table-shoot bow
+	0			table-shoot gun
+	0			table-swing bat
+	15108312			table-exercise
+	15354540			table-throw
+	11536676			table-fence
+	13147974			table-hug
+	16121935			table-kiss
+	13588471			table-punch
+	0			table-shake hands
+	0			table-sword fight
+	13036719			cow-smile
+	14478230			cow-laugh
+	10790025			cow-chew
+	16606940			cow-talk
+	0			cow-smake
+	10885542			cow-eat
+	13118387			cow-drink
+	10745851			cow-cartwheel
+	14992636			cow-clap
+	14188971			cow-climb
+	0			cow-climb stairs
+	12980589			cow-dive
+	14884607			cow-fall
+	0			cow-backhand flip
+	10506678			cow-handstand
+	16095097			cow-jump
+	-4524			cow-pull up
+	0			cow-push up
+	13985233			cow-run
+	-21491			cow-sit down
+	0			cow-sit up
+	12769405			cow-somersault
+	0			cow-stand up
+	13601438			cow-turn
+	18350457			cow-walk
+	15262077			cow-wave
+	12817994			cow-brush
+	11695693			cow-catch
+	0			cow-draw sword
+	13957825			cow-dribble
+	14679618			cow-golf
+	13216988			cow-hit
+	14253469			cow-kick
+	14055007			cow-pick
+	13184151			cow-pour
+	16832661			cow-push
+	16670452			cow-ride
+	0			cow-shoot ball
+	0			cow-shoot bow
+	0			cow-shoot gun
+	0			cow-swing bat
+	15365612			cow-exercise
+	15616033			cow-throw
+	11733150			cow-fence
+	13371889			cow-hug
+	16396497			cow-kiss
+	13819887			cow-punch
+	0			cow-shake hands
+	0			cow-sword fight
+	14819453			horse-smile
+	16458086			horse-laugh
+	12265530			horse-chew
+	18877891			horse-talk
+	0			horse-smake
+	12374108			horse-eat
+	14912289			horse-drink
+	12215315			horse-cartwheel
+	17042836			horse-clap
+	16129272			horse-climb
+	0			horse-climb stairs
+	14755648			horse-dive
+	16920035			horse-fall
+	0			horse-backhand flip
+	11943436			horse-handstand
+	18296055			horse-jump
+	-5143			horse-pull up
+	0			horse-push up
+	15897674			horse-run
+	-24429			horse-sit down
+	0			horse-sit up
+	14515585			horse-somersault
+	0			horse-stand up
+	15461396			horse-turn
+	20859830			horse-walk
+	17349122			horse-wave
+	14570818			horse-brush
+	13295045			horse-catch
+	0			horse-draw sword
+	15866517			horse-dribble
+	16687014			horse-golf
+	15024374			horse-hit
+	16202590			horse-kick
+	15976988			horse-pick
+	14987046			horse-pour
+	19134479			horse-push
+	18950088			horse-ride
+	0			horse-shoot ball
+	0			horse-shoot bow
+	0			horse-shoot gun
+	0			horse-swing bat
+	17466815			horse-exercise
+	17751481			horse-throw
+	13337624			horse-fence
+	15200456			horse-hug
+	18638671			horse-kiss
+	15709717			horse-punch
+	0			horse-shake hands
+	0			horse-sword fight
+	14974986			bike-smile
+	16630818			bike-laugh
+	12394260			bike-chew
+	19076020			bike-talk
+	0			bike-smake
+	12503978			bike-eat
+	15068797			bike-drink
+	12343518			bike-cartwheel
+	17221705			bike-clap
+	16298553			bike-climb
+	0			bike-climb stairs
+	14910512			bike-dive
+	17097615			bike-fall
+	0			bike-backhand flip
+	12068785			bike-handstand
+	18488077			bike-jump
+	-5197			bike-pull up
+	0			bike-push up
+	16064524			bike-run
+	-24686			bike-sit down
+	0			bike-sit up
+	14667930			bike-somersault
+	0			bike-stand up
+	15623667			bike-turn
+	21078759			bike-walk
+	17531205			bike-wave
+	14723742			bike-brush
+	13434580			bike-catch
+	0			bike-draw sword
+	16033040			bike-dribble
+	16862148			bike-golf
+	15182058			bike-hit
+	16372640			bike-kick
+	16144671			bike-pick
+	15144339			bike-pour
+	19335300			bike-push
+	19148974			bike-ride
+	0			bike-shoot ball
+	0			bike-shoot bow
+	0			bike-shoot gun
+	0			bike-swing bat
+	17650134			bike-exercise
+	17937787			bike-throw
+	13477606			bike-fence
+	15359989			bike-hug
+	18834289			bike-kiss
+	15874595			bike-punch
+	0			bike-shake hands
+	0			bike-sword fight
+	17766869			plant-smile
+	19731407			plant-laugh
+	14705000			plant-chew
+	22632483			plant-talk
+	0			plant-smake
+	14835174			plant-eat
+	17878169			plant-drink
+	14644799			plant-cartwheel
+	20432457			plant-clap
+	19337196			plant-climb
+	0			plant-climb stairs
+	17690374			plant-dive
+	20285232			plant-fall
+	0			plant-backhand flip
+	14318846			plant-handstand
+	21934926			plant-jump
+	-6166			plant-pull up
+	0			plant-push up
+	19059535			plant-run
+	-29288			plant-sit down
+	0			plant-sit up
+	17402565			plant-somersault
+	0			plant-stand up
+	18536487			plant-turn
+	25008606			plant-walk
+	20799660			plant-wave
+	17468783			plant-brush
+	15939275			plant-catch
+	0			plant-draw sword
+	19022182			plant-dribble
+	20005866			plant-golf
+	18012546			plant-hit
+	19425096			plant-kick
+	19154625			plant-pick
+	17967794			plant-pour
+	22940103			plant-push
+	22719039			plant-ride
+	0			plant-shoot ball
+	0			plant-shoot bow
+	0			plant-shoot gun
+	0			plant-swing bat
+	20940761			plant-exercise
+	21282043			plant-throw
+	15990322			plant-fence
+	18223649			plant-hug
+	22345686			plant-kiss
+	18834197			plant-punch
+	0			plant-shake hands
+	0			plant-sword fight
+	13825190			sheep-smile
+	15353885			sheep-laugh
+	11442614			sheep-chew
+	17611341			sheep-talk
+	0			sheep-smake
+	11543908			sheep-eat
+	13911797			sheep-drink
+	11395769			sheep-cartwheel
+	15899403			sheep-clap
+	15047132			sheep-climb
+	0			sheep-climb stairs
+	13765666			sheep-dive
+	15784840			sheep-fall
+	0			sheep-backhand flip
+	11142130			sheep-handstand
+	17068541			sheep-jump
+	-4798			sheep-pull up
+	0			sheep-push up
+	14831071			sheep-run
+	-22790			sheep-sit down
+	0			sheep-sit up
+	13541709			sheep-somersault
+	0			sheep-stand up
+	14424064			sheep-turn
+	19460308			sheep-walk
+	16185140			sheep-wave
+	13593237			sheep-brush
+	12403058			sheep-catch
+	0			sheep-draw sword
+	14802005			sheep-dribble
+	15567453			sheep-golf
+	14016363			sheep-hit
+	15115531			sheep-kick
+	14905065			sheep-pick
+	13981539			sheep-pour
+	17850713			sheep-push
+	17678694			sheep-ride
+	0			sheep-shoot ball
+	0			sheep-shoot bow
+	0			sheep-shoot gun
+	0			sheep-swing bat
+	16294936			sheep-exercise
+	16560503			sheep-throw
+	12442780			sheep-fence
+	14180631			sheep-hug
+	17388171			sheep-kiss
+	14655725			sheep-punch
+	0			sheep-shake hands
+	0			sheep-sword fight
+	15639676			sofa-smile
+	17369004			sofa-laugh
+	12944399			sofa-chew
+	19922740			sofa-talk
+	0			sofa-smake
+	13058987			sofa-eat
+	15737650			sofa-drink
+	12891405			sofa-cartwheel
+	17986118			sofa-clap
+	17021991			sofa-climb
+	0			sofa-climb stairs
+	15572339			sofa-dive
+	17856520			sofa-fall
+	0			sofa-backhand flip
+	12604478			sofa-handstand
+	19308700			sofa-jump
+	-5427			sofa-pull up
+	0			sofa-push up
+	16777574			sofa-run
+	-25781			sofa-sit down
+	0			sofa-sit up
+	15318989			sofa-somersault
+	0			sofa-stand up
+	16317149			sofa-turn
+	22014374			sofa-walk
+	18309356			sofa-wave
+	15377279			sofa-brush
+	14030896			sofa-catch
+	0			sofa-draw sword
+	16744693			sofa-dribble
+	17610602			sofa-golf
+	15855939			sofa-hit
+	17099367			sofa-kick
+	16861278			sofa-pick
+	15816545			sofa-pour
+	20193528			sofa-push
+	19998932			sofa-ride
+	0			sofa-shoot ball
+	0			sofa-shoot bow
+	0			sofa-shoot gun
+	0			sofa-swing bat
+	18433563			sofa-exercise
+	18733985			sofa-throw
+	14075831			sofa-fence
+	16041767			sofa-hug
+	19670279			sofa-kiss
+	16579215			sofa-punch
+	0			sofa-shake hands
+	0			sofa-sword fight
+	18166539			monitor-smile
+	20175271			monitor-laugh
+	15035794			monitor-chew
+	23141608			monitor-talk
+	0			monitor-smake
+	15168895			monitor-eat
+	18280343			monitor-drink
+	14974238			monitor-cartwheel
+	20892091			monitor-clap
+	19772192			monitor-climb
+	0			monitor-climb stairs
+	18088324			monitor-dive
+	20741554			monitor-fall
+	0			monitor-backhand flip
+	14640952			monitor-handstand
+	22428359			monitor-jump
+	-6304			monitor-pull up
+	0			monitor-push up
+	19488285			monitor-run
+	-29947			monitor-sit down
+	0			monitor-sit up
+	17794041			monitor-somersault
+	0			monitor-stand up
+	18953471			monitor-turn
+	25571182			monitor-walk
+	21267554			monitor-wave
+	17861749			monitor-brush
+	16297833			monitor-catch
+	0			monitor-draw sword
+	19450092			monitor-dribble
+	20455904			monitor-golf
+	18417744			monitor-hit
+	19862069			monitor-kick
+	19585514			monitor-pick
+	18371985			monitor-pour
+	23456147			monitor-push
+	23230111			monitor-ride
+	0			monitor-shoot ball
+	0			monitor-shoot bow
+	0			monitor-shoot gun
+	0			monitor-swing bat
+	21411829			monitor-exercise
+	21760789			monitor-throw
+	16350029			monitor-fence
+	18633596			monitor-hug
+	22848358			monitor-kiss
+	19257878			monitor-punch
+	0			monitor-shake hands
+	0			monitor-sword fight
+
+======================================VERB-OBJECT EDGE==============================================
+
+	Weight			Connection name
+
+	9610357			smile-aeroplane
+	11110902			smile-bicycle
+	10158783			smile-bird
+	10616093			smile-boat
+	11251906			smile-bottle
+	11295212			smile-person
+	11101088			smile-car
+	11532123			smile-bus
+	9647011			smile-dog
+	9033124			smile-cat
+	10558006			smile-chair
+	8163703			smile-table
+	7369488			smile-cow
+	8596932			smile-horse
+	10586350			smile-bike
+	11727936			smile-plant
+	7564818			smile-sheep
+	10382868			smile-sofa
+	9541914			smile-monitor
+	10673004			laugh-aeroplane
+	12339469			laugh-bicycle
+	11282071			laugh-bird
+	11789948			laugh-boat
+	12496065			laugh-bottle
+	12544160			laugh-person
+	12328571			laugh-car
+	12807266			laugh-bus
+	10713711			laugh-dog
+	10031945			laugh-cat
+	11725438			laugh-chair
+	9066389			laugh-table
+	8184355			laugh-cow
+	9547522			laugh-horse
+	11756916			laugh-bike
+	13024731			laugh-plant
+	8401284			laugh-sheep
+	11530934			laugh-sofa
+	10596994			laugh-monitor
+	7954148			chew-aeroplane
+	9196095			chew-bicycle
+	8408060			chew-bird
+	8786560			chew-boat
+	9312799			chew-bottle
+	9348642			chew-person
+	9187973			chew-car
+	9544725			chew-bus
+	7984485			chew-dog
+	7476393			chew-cat
+	8738483			chew-chair
+	6756804			chew-table
+	6099461			chew-cow
+	7115373			chew-horse
+	8761942			chew-bike
+	9706792			chew-plant
+	6261128			chew-sheep
+	8593528			chew-sofa
+	7897500			chew-monitor
+	12242238			talk-aeroplane
+	14153721			talk-bicycle
+	12940856			talk-bird
+	13523405			talk-boat
+	14333340			talk-bottle
+	14388507			talk-person
+	14141220			talk-car
+	14690297			talk-bus
+	12288931			talk-dog
+	11506925			talk-cat
+	13449410			talk-chair
+	10399405			talk-table
+	9387687			talk-cow
+	10951279			talk-horse
+	13485516			talk-bike
+	14939735			talk-plant
+	9636510			talk-sheep
+	13226309			talk-sofa
+	12155052			talk-monitor
+	0			smake-aeroplane
+	0			smake-bicycle
+	0			smake-bird
+	0			smake-boat
+	0			smake-bottle
+	0			smake-person
+	0			smake-car
+	0			smake-bus
+	0			smake-dog
+	0			smake-cat
+	0			smake-chair
+	0			smake-table
+	0			smake-cow
+	0			smake-horse
+	0			smake-bike
+	0			smake-plant
+	0			smake-sheep
+	0			smake-sofa
+	0			smake-monitor
+	8024560			eat-aeroplane
+	9277502			eat-bicycle
+	8482491			eat-bird
+	8864341			eat-boat
+	9395239			eat-bottle
+	9431400			eat-person
+	9269308			eat-car
+	9629218			eat-bus
+	8055166			eat-dog
+	7542576			eat-cat
+	8815839			eat-chair
+	6816618			eat-table
+	6153455			eat-cow
+	7178360			eat-horse
+	8839506			eat-bike
+	9792720			eat-plant
+	6316554			eat-sheep
+	8669600			eat-sofa
+	7967412			eat-monitor
+	9670560			drink-aeroplane
+	11180506			drink-bicycle
+	10222422			drink-bird
+	10682597			drink-boat
+	11322393			drink-bottle
+	11365971			drink-person
+	11170631			drink-car
+	11604365			drink-bus
+	9707444			drink-dog
+	9089712			drink-cat
+	10624146			drink-chair
+	8214844			drink-table
+	7415653			drink-cow
+	8650787			drink-horse
+	10652668			drink-bike
+	11801405			drink-plant
+	7612207			drink-sheep
+	10447911			drink-sofa
+	9601689			drink-monitor
+	7921584			cartwheel-aeroplane
+	9158447			cartwheel-bicycle
+	8373638			cartwheel-bird
+	8750588			cartwheel-boat
+	9274673			cartwheel-bottle
+	9310369			cartwheel-person
+	9150358			cartwheel-car
+	9505649			cartwheel-bus
+	7951797			cartwheel-dog
+	7445785			cartwheel-cat
+	8702708			cartwheel-chair
+	6729142			cartwheel-table
+	6074490			cartwheel-cow
+	7086243			cartwheel-horse
+	8726071			cartwheel-bike
+	9667053			cartwheel-plant
+	6235496			cartwheel-sheep
+	8558346			cartwheel-sofa
+	7865168			cartwheel-monitor
+	11052212			clap-aeroplane
+	12777886			clap-bicycle
+	11682919			clap-bird
+	12208841			clap-boat
+	12940045			clap-bottle
+	12989849			clap-person
+	12766600			clap-car
+	13262303			clap-bus
+	11094366			clap-dog
+	10388376			clap-cat
+	12142038			clap-chair
+	9388515			clap-table
+	8475142			clap-cow
+	9886742			clap-horse
+	12174635			clap-bike
+	13487495			clap-plant
+	8699778			clap-sheep
+	11940624			clap-sofa
+	10973501			clap-monitor
+	10459770			climb-aeroplane
+	12092941			climb-bicycle
+	11056668			climb-bird
+	11554398			climb-boat
+	12246407			climb-bottle
+	12293542			climb-person
+	12082260			climb-car
+	12551391			climb-bus
+	10499663			climb-dog
+	9831518			climb-cat
+	11491177			climb-chair
+	8885253			climb-table
+	8020841			climb-cow
+	9356773			climb-horse
+	11522026			climb-bike
+	12764511			climb-plant
+	8233435			climb-sheep
+	11300559			climb-sofa
+	10385278			climb-monitor
+	0			climb stairs-aeroplane
+	0			climb stairs-bicycle
+	0			climb stairs-bird
+	0			climb stairs-boat
+	0			climb stairs-bottle
+	0			climb stairs-person
+	0			climb stairs-car
+	0			climb stairs-bus
+	0			climb stairs-dog
+	0			climb stairs-cat
+	0			climb stairs-chair
+	0			climb stairs-table
+	0			climb stairs-cow
+	0			climb stairs-horse
+	0			climb stairs-bike
+	0			climb stairs-plant
+	0			climb stairs-sheep
+	0			climb stairs-sofa
+	0			climb stairs-monitor
+	9568979			dive-aeroplane
+	11063064			dive-bicycle
+	10115044			dive-bird
+	10570386			dive-boat
+	11203461			dive-bottle
+	11246581			dive-person
+	11053293			dive-car
+	11482471			dive-bus
+	9605476			dive-dog
+	8994232			dive-cat
+	10512548			dive-chair
+	8128554			dive-table
+	7337758			dive-cow
+	8559918			dive-horse
+	10540770			dive-bike
+	11677441			dive-plant
+	7532248			dive-sheep
+	10338165			dive-sofa
+	9500831			dive-monitor
+	10972576			fall-aeroplane
+	12685816			fall-bicycle
+	11598738			fall-bird
+	12120870			fall-boat
+	12846806			fall-bottle
+	12896251			fall-person
+	12674611			fall-car
+	13166742			fall-bus
+	11014426			fall-dog
+	10313523			fall-cat
+	12054549			fall-chair
+	9320866			fall-table
+	8414075			fall-cow
+	9815504			fall-horse
+	12086911			fall-bike
+	13390311			fall-plant
+	8637092			fall-sheep
+	11854587			fall-sofa
+	10894432			fall-monitor
+	0			backhand flip-aeroplane
+	0			backhand flip-bicycle
+	0			backhand flip-bird
+	0			backhand flip-boat
+	0			backhand flip-bottle
+	0			backhand flip-person
+	0			backhand flip-car
+	0			backhand flip-bus
+	0			backhand flip-dog
+	0			backhand flip-cat
+	0			backhand flip-chair
+	0			backhand flip-table
+	0			backhand flip-cow
+	0			backhand flip-horse
+	0			backhand flip-bike
+	0			backhand flip-plant
+	0			backhand flip-sheep
+	0			backhand flip-sofa
+	0			backhand flip-monitor
+	7745271			handstand-aeroplane
+	8954605			handstand-bicycle
+	8187264			handstand-bird
+	8555824			handstand-boat
+	9068244			handstand-bottle
+	9103146			handstand-person
+	8946696			handstand-car
+	9294079			handstand-bus
+	7774812			handstand-dog
+	7280062			handstand-cat
+	8509010			handstand-chair
+	6579370			handstand-table
+	5939288			handstand-cow
+	6928522			handstand-horse
+	8531853			handstand-bike
+	9451891			handstand-plant
+	6096711			handstand-sheep
+	8367861			handstand-sofa
+	7690111			handstand-monitor
+	11864920			jump-aeroplane
+	13717489			jump-bicycle
+	12542005			jump-bird
+	13106599			jump-boat
+	13891572			jump-bottle
+	13945038			jump-person
+	13705373			jump-car
+	14237527			jump-bus
+	11910173			jump-dog
+	11152270			jump-cat
+	13034885			jump-chair
+	10078885			jump-table
+	9098349			jump-cow
+	10613749			jump-horse
+	13069878			jump-bike
+	14479277			jump-plant
+	9339503			jump-sheep
+	12818660			jump-sofa
+	11780421			jump-monitor
+	-3335			pull up-aeroplane
+	-3856			pull up-bicycle
+	-3525			pull up-bird
+	-3684			pull up-boat
+	-3904			pull up-bottle
+	-3920			pull up-person
+	-3852			pull up-car
+	-4002			pull up-bus
+	-3348			pull up-dog
+	-3134			pull up-cat
+	-3664			pull up-chair
+	-2833			pull up-table
+	-2557			pull up-cow
+	-2983			pull up-horse
+	-3674			pull up-bike
+	-4070			pull up-plant
+	-2625			pull up-sheep
+	-3603			pull up-sofa
+	-3311			pull up-monitor
+	0			push up-aeroplane
+	0			push up-bicycle
+	0			push up-bird
+	0			push up-boat
+	0			push up-bottle
+	0			push up-person
+	0			push up-car
+	0			push up-bus
+	0			push up-dog
+	0			push up-cat
+	0			push up-chair
+	0			push up-table
+	0			push up-cow
+	0			push up-horse
+	0			push up-bike
+	0			push up-plant
+	0			push up-sheep
+	0			push up-sofa
+	0			push up-monitor
+	10309579			run-aeroplane
+	11919299			run-bicycle
+	10897907			run-bird
+	11388490			run-boat
+	12070562			run-bottle
+	12117020			run-person
+	11908772			run-car
+	12371167			run-bus
+	10348900			run-dog
+	9690348			run-cat
+	11326176			run-chair
+	8757671			run-table
+	7905670			run-cow
+	9222421			run-horse
+	11356582			run-bike
+	12581227			run-plant
+	8115212			run-sheep
+	11138296			run-sofa
+	10236157			run-monitor
+	-15842			sit down-aeroplane
+	-18316			sit down-bicycle
+	-16746			sit down-bird
+	-17500			sit down-boat
+	-18548			sit down-bottle
+	-18620			sit down-person
+	-18300			sit down-car
+	-19010			sit down-bus
+	-15903			sit down-dog
+	-14891			sit down-cat
+	-17404			sit down-chair
+	-13457			sit down-table
+	-12148			sit down-cow
+	-14172			sit down-horse
+	-17451			sit down-bike
+	-19333			sit down-plant
+	-12470			sit down-sheep
+	-17116			sit down-sofa
+	-15729			sit down-monitor
+	0			sit up-aeroplane
+	0			sit up-bicycle
+	0			sit up-bird
+	0			sit up-boat
+	0			sit up-bottle
+	0			sit up-person
+	0			sit up-car
+	0			sit up-bus
+	0			sit up-dog
+	0			sit up-cat
+	0			sit up-chair
+	0			sit up-table
+	0			sit up-cow
+	0			sit up-horse
+	0			sit up-bike
+	0			sit up-plant
+	0			sit up-sheep
+	0			sit up-sofa
+	0			sit up-monitor
+	9413300			somersault-aeroplane
+	10883077			somersault-bicycle
+	9950480			somersault-bird
+	10398414			somersault-boat
+	11021189			somersault-bottle
+	11063608			somersault-person
+	10873464			somersault-car
+	11295661			somersault-bus
+	9449202			somersault-dog
+	8847903			somersault-cat
+	10341518			somersault-chair
+	7996309			somersault-table
+	7218379			somersault-cow
+	8420655			somersault-horse
+	10369280			somersault-bike
+	11487459			somersault-plant
+	7409704			somersault-sheep
+	10169971			somersault-sofa
+	9346260			somersault-monitor
+	0			stand up-aeroplane
+	0			stand up-bicycle
+	0			stand up-bird
+	0			stand up-boat
+	0			stand up-bottle
+	0			stand up-person
+	0			stand up-car
+	0			stand up-bus
+	0			stand up-dog
+	0			stand up-cat
+	0			stand up-chair
+	0			stand up-table
+	0			stand up-cow
+	0			stand up-horse
+	0			stand up-bike
+	0			stand up-plant
+	0			stand up-sheep
+	0			stand up-sofa
+	0			stand up-monitor
+	10026654			turn-aeroplane
+	11592200			turn-bicycle
+	10598837			turn-bird
+	11075957			turn-boat
+	11739312			turn-bottle
+	11784494			turn-person
+	11581961			turn-car
+	12031667			turn-bus
+	10064896			turn-dog
+	9424417			turn-cat
+	11015353			turn-chair
+	8517335			turn-table
+	7688716			turn-cow
+	8969331			turn-horse
+	11044925			turn-bike
+	12235962			turn-plant
+	7892508			turn-sheep
+	10832629			turn-sofa
+	9955247			turn-monitor
+	13527517			walk-aeroplane
+	15639682			walk-bicycle
+	14299481			walk-bird
+	14943190			walk-boat
+	15838158			walk-bottle
+	15899117			walk-person
+	15625868			walk-car
+	16232591			walk-bus
+	13579112			walk-dog
+	12715006			walk-cat
+	14861426			walk-chair
+	11491211			walk-table
+	10373275			walk-cow
+	12101023			walk-horse
+	14901323			walk-bike
+	16508217			walk-plant
+	10648221			walk-sheep
+	14614903			walk-sofa
+	13431178			walk-monitor
+	11250837			wave-aeroplane
+	13007525			wave-bicycle
+	11892879			wave-bird
+	12428252			wave-boat
+	13172598			wave-bottle
+	13223297			wave-person
+	12996036			wave-car
+	13500647			wave-bus
+	11293748			wave-dog
+	10575072			wave-cat
+	12360250			wave-chair
+	9557241			wave-table
+	8627454			wave-cow
+	10064422			wave-horse
+	12393432			wave-bike
+	13729886			wave-plant
+	8856127			wave-sheep
+	12155216			wave-sofa
+	11170712			wave-monitor
+	9449118			brush-aeroplane
+	10924488			brush-bicycle
+	9988343			brush-bird
+	10437981			brush-boat
+	11063126			brush-bottle
+	11105706			brush-person
+	10914839			brush-car
+	11338641			brush-bus
+	9485157			brush-dog
+	8881570			brush-cat
+	10380868			brush-chair
+	8026736			brush-table
+	7245845			brush-cow
+	8452696			brush-horse
+	10408736			brush-bike
+	11531169			brush-plant
+	7437898			brush-sheep
+	10208668			brush-sofa
+	9381824			brush-monitor
+	8621784			catch-aeroplane
+	9967976			catch-bicycle
+	9113797			catch-bird
+	9524066			catch-boat
+	10094475			catch-bottle
+	10133327			catch-person
+	9959172			catch-car
+	10345868			catch-bus
+	8654668			catch-dog
+	8103929			catch-cat
+	9471953			catch-chair
+	7323941			catch-table
+	6611423			catch-cow
+	7712606			catch-horse
+	9497382			catch-bike
+	10521538			catch-plant
+	6786661			catch-sheep
+	9314831			catch-sofa
+	8560382			catch-monitor
+	0			draw sword-aeroplane
+	0			draw sword-bicycle
+	0			draw sword-bird
+	0			draw sword-boat
+	0			draw sword-bottle
+	0			draw sword-person
+	0			draw sword-car
+	0			draw sword-bus
+	0			draw sword-dog
+	0			draw sword-cat
+	0			draw sword-chair
+	0			draw sword-table
+	0			draw sword-cow
+	0			draw sword-horse
+	0			draw sword-bike
+	0			draw sword-plant
+	0			draw sword-sheep
+	0			draw sword-sofa
+	0			draw sword-monitor
+	10289374			dribble-aeroplane
+	11895940			dribble-bicycle
+	10876549			dribble-bird
+	11366171			dribble-boat
+	12046906			dribble-bottle
+	12093273			dribble-person
+	11885433			dribble-car
+	12346922			dribble-bus
+	10328618			dribble-dog
+	9671357			dribble-cat
+	11303979			dribble-chair
+	8740507			dribble-table
+	7890177			dribble-cow
+	9204346			dribble-horse
+	11334326			dribble-bike
+	12556570			dribble-plant
+	8099308			dribble-sheep
+	11116467			dribble-sofa
+	10216096			dribble-monitor
+	10821463			golf-aeroplane
+	12511108			golf-bicycle
+	11439002			golf-bird
+	11953943			golf-boat
+	12669882			golf-bottle
+	12718646			golf-person
+	12500058			golf-car
+	12985412			golf-bus
+	10862736			golf-dog
+	10171487			golf-cat
+	11888536			golf-chair
+	9192500			golf-table
+	8298197			golf-cow
+	9680326			golf-horse
+	11920451			golf-bike
+	13205901			golf-plant
+	8518143			golf-sheep
+	11691327			golf-sofa
+	10744395			golf-monitor
+	9743247			hit-aeroplane
+	11264542			hit-bicycle
+	10299257			hit-bird
+	10762891			hit-boat
+	11407495			hit-bottle
+	11451401			hit-person
+	11254592			hit-car
+	11691587			hit-bus
+	9780408			hit-dog
+	9158033			hit-cat
+	10704000			hit-chair
+	8276589			hit-table
+	7471392			hit-cow
+	8715809			hit-horse
+	10732736			hit-bike
+	11890108			hit-plant
+	7669423			hit-sheep
+	10526441			hit-sofa
+	9673858			hit-monitor
+	10507316			kick-aeroplane
+	12147911			kick-bicycle
+	11106928			kick-bird
+	11606920			kick-boat
+	12302075			kick-bottle
+	12349424			kick-person
+	12137181			kick-car
+	12608445			kick-bus
+	10547391			kick-dog
+	9876209			kick-cat
+	11543412			kick-chair
+	8925642			kick-table
+	8057301			kick-cow
+	9399306			kick-horse
+	11574401			kick-bike
+	12822534			kick-plant
+	8270862			kick-sheep
+	11351928			kick-sofa
+	10432485			kick-monitor
+	10361014			pick-aeroplane
+	11978766			pick-bicycle
+	10952277			pick-bird
+	11445308			pick-boat
+	12130783			pick-bottle
+	12177473			pick-person
+	11968186			pick-car
+	12432888			pick-bus
+	10400531			pick-dog
+	9738694			pick-cat
+	11382683			pick-chair
+	8801363			pick-table
+	7945112			pick-cow
+	9268432			pick-horse
+	11413241			pick-bike
+	12643996			pick-plant
+	8155700			pick-sheep
+	11193866			pick-sofa
+	10287226			pick-monitor
+	9719040			pour-aeroplane
+	11236555			pour-bicycle
+	10273668			pour-bird
+	10736151			pour-boat
+	11379154			pour-bottle
+	11422950			pour-person
+	11226631			pour-car
+	11662540			pour-bus
+	9756109			pour-dog
+	9135280			pour-cat
+	10677406			pour-chair
+	8256026			pour-table
+	7452829			pour-cow
+	8694155			pour-horse
+	10706071			pour-bike
+	11860567			pour-plant
+	7650368			pour-sheep
+	10500288			pour-sofa
+	9649824			pour-monitor
+	12408634			push-aeroplane
+	14346098			push-bicycle
+	13116747			push-bird
+	13707214			push-boat
+	14528158			push-bottle
+	14584075			push-person
+	14333427			push-car
+	14889967			push-bus
+	12455961			push-dog
+	11663327			push-cat
+	13632213			push-chair
+	10540754			push-table
+	9515284			push-cow
+	11100128			push-horse
+	13668810			push-bike
+	15142795			push-plant
+	9767489			push-sheep
+	13406080			push-sofa
+	12320263			push-monitor
+	12289057			ride-aeroplane
+	14207851			ride-bicycle
+	12990347			ride-bird
+	13575124			ride-boat
+	14388157			ride-bottle
+	14443534			ride-person
+	14195302			ride-car
+	14746479			ride-bus
+	12335928			ride-dog
+	11550932			ride-cat
+	13500846			ride-chair
+	10439177			ride-table
+	9423590			ride-cow
+	10993161			ride-horse
+	13537090			ride-bike
+	14996871			ride-plant
+	9673364			ride-sheep
+	13276891			ride-sofa
+	12201538			ride-monitor
+	0			shoot ball-aeroplane
+	0			shoot ball-bicycle
+	0			shoot ball-bird
+	0			shoot ball-boat
+	0			shoot ball-bottle
+	0			shoot ball-person
+	0			shoot ball-car
+	0			shoot ball-bus
+	0			shoot ball-dog
+	0			shoot ball-cat
+	0			shoot ball-chair
+	0			shoot ball-table
+	0			shoot ball-cow
+	0			shoot ball-horse
+	0			shoot ball-bike
+	0			shoot ball-plant
+	0			shoot ball-sheep
+	0			shoot ball-sofa
+	0			shoot ball-monitor
+	0			shoot bow-aeroplane
+	0			shoot bow-bicycle
+	0			shoot bow-bird
+	0			shoot bow-boat
+	0			shoot bow-bottle
+	0			shoot bow-person
+	0			shoot bow-car
+	0			shoot bow-bus
+	0			shoot bow-dog
+	0			shoot bow-cat
+	0			shoot bow-chair
+	0			shoot bow-table
+	0			shoot bow-cow
+	0			shoot bow-horse
+	0			shoot bow-bike
+	0			shoot bow-plant
+	0			shoot bow-sheep
+	0			shoot bow-sofa
+	0			shoot bow-monitor
+	0			shoot gun-aeroplane
+	0			shoot gun-bicycle
+	0			shoot gun-bird
+	0			shoot gun-boat
+	0			shoot gun-bottle
+	0			shoot gun-person
+	0			shoot gun-car
+	0			shoot gun-bus
+	0			shoot gun-dog
+	0			shoot gun-cat
+	0			shoot gun-chair
+	0			shoot gun-table
+	0			shoot gun-cow
+	0			shoot gun-horse
+	0			shoot gun-bike
+	0			shoot gun-plant
+	0			shoot gun-sheep
+	0			shoot gun-sofa
+	0			shoot gun-monitor
+	0			swing bat-aeroplane
+	0			swing bat-bicycle
+	0			swing bat-bird
+	0			swing bat-boat
+	0			swing bat-bottle
+	0			swing bat-person
+	0			swing bat-car
+	0			swing bat-bus
+	0			swing bat-dog
+	0			swing bat-cat
+	0			swing bat-chair
+	0			swing bat-table
+	0			swing bat-cow
+	0			swing bat-horse
+	0			swing bat-bike
+	0			swing bat-plant
+	0			swing bat-sheep
+	0			swing bat-sofa
+	0			swing bat-monitor
+	11327161			exercise-aeroplane
+	13095765			exercise-bicycle
+	11973558			exercise-bird
+	12512563			exercise-boat
+	13261958			exercise-bottle
+	13313001			exercise-person
+	13084198			exercise-car
+	13592233			exercise-bus
+	11370363			exercise-dog
+	10646811			exercise-cat
+	12444099			exercise-chair
+	9622075			exercise-table
+	8685981			exercise-cow
+	10132697			exercise-horse
+	12477506			exercise-bike
+	13823027			exercise-plant
+	8916205			exercise-sheep
+	12237674			exercise-sofa
+	11246492			exercise-monitor
+	11511765			throw-aeroplane
+	13309194			throw-bicycle
+	12168698			throw-bird
+	12716487			throw-boat
+	13478095			throw-bottle
+	13529970			throw-person
+	13297438			throw-car
+	13813753			throw-bus
+	11555672			throw-dog
+	10820327			throw-cat
+	12646907			throw-chair
+	9778891			throw-table
+	8827540			throw-cow
+	10297835			throw-horse
+	12680859			throw-bike
+	14048308			throw-plant
+	9061517			throw-sheep
+	12437118			throw-sofa
+	11429782			throw-monitor
+	8649397			fence-aeroplane
+	9999899			fence-bicycle
+	9142985			fence-bird
+	9554568			fence-boat
+	10126804			fence-bottle
+	10165780			fence-person
+	9991067			fence-car
+	10379001			fence-bus
+	8682386			fence-dog
+	8129883			fence-cat
+	9502289			fence-chair
+	7347397			fence-table
+	6632597			fence-cow
+	7737307			fence-horse
+	9527798			fence-bike
+	10555235			fence-plant
+	6808396			fence-sheep
+	9344663			fence-sofa
+	8587798			fence-monitor
+	9857436			hug-aeroplane
+	11396560			hug-bicycle
+	10419962			hug-bird
+	10889030			hug-boat
+	11541189			hug-bottle
+	11585609			hug-person
+	11386494			hug-car
+	11828610			hug-bus
+	9895033			hug-dog
+	9265363			hug-cat
+	10829449			hug-chair
+	8373589			hug-table
+	7558955			hug-cow
+	8817957			hug-horse
+	10858522			hug-bike
+	12029458			hug-plant
+	7759307			hug-sheep
+	10649808			hug-sofa
+	9787234			hug-monitor
+	12087105			kiss-aeroplane
+	13974366			kiss-bicycle
+	12776870			kiss-bird
+	13352036			kiss-boat
+	14151709			kiss-bottle
+	14206176			kiss-person
+	13962023			kiss-car
+	14504142			kiss-bus
+	12133206			kiss-dog
+	11361110			kiss-cat
+	13278979			kiss-chair
+	10267625			kiss-table
+	9268727			kiss-cow
+	10812504			kiss-horse
+	13314628			kiss-bike
+	14750420			kiss-plant
+	9514397			kiss-sheep
+	13058705			kiss-sofa
+	12001024			kiss-monitor
+	10187690			punch-aeroplane
+	11778379			punch-bicycle
+	10769062			punch-bird
+	11253845			punch-boat
+	11927854			punch-bottle
+	11973762			punch-person
+	11767976			punch-car
+	12224904			punch-bus
+	10226546			punch-dog
+	9575781			punch-cat
+	11192268			punch-chair
+	8654130			punch-table
+	7812203			punch-cow
+	9113385			punch-horse
+	11222315			punch-bike
+	12432481			punch-plant
+	8019267			punch-sheep
+	11006609			punch-sofa
+	10115136			punch-monitor
+	0			shake hands-aeroplane
+	0			shake hands-bicycle
+	0			shake hands-bird
+	0			shake hands-boat
+	0			shake hands-bottle
+	0			shake hands-person
+	0			shake hands-car
+	0			shake hands-bus
+	0			shake hands-dog
+	0			shake hands-cat
+	0			shake hands-chair
+	0			shake hands-table
+	0			shake hands-cow
+	0			shake hands-horse
+	0			shake hands-bike
+	0			shake hands-plant
+	0			shake hands-sheep
+	0			shake hands-sofa
+	0			shake hands-monitor
+	0			sword fight-aeroplane
+	0			sword fight-bicycle
+	0			sword fight-bird
+	0			sword fight-boat
+	0			sword fight-bottle
+	0			sword fight-person
+	0			sword fight-car
+	0			sword fight-bus
+	0			sword fight-dog
+	0			sword fight-cat
+	0			sword fight-chair
+	0			sword fight-table
+	0			sword fight-cow
+	0			sword fight-horse
+	0			sword fight-bike
+	0			sword fight-plant
+	0			sword fight-sheep
+	0			sword fight-sofa
+	0			sword fight-monitor

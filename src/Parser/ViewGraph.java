@@ -1,5 +1,7 @@
 package Parser;
 
+//all the color codings are extracted from http://www.tayloredmktg.com/rgb/ and http://www.rapidtables.com/web/color/RGB_Color.html
+
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -158,62 +160,133 @@ public class ViewGraph extends JApplet {
 	
 	public int setstrokeprop(Graphics2D g,int weight)
 	{
-		if(weight<50)
+		if(weight<25)
 		{
-			g.setPaint(Color.orange);
+			g.setPaint(new Color(250,128,114)); //salmon
 			return weight;
 		}
-		if(weight>=50 && weight <100)
+		if(weight >=25 && weight<50)
 		{
-			g.setPaint(Color.magenta);
+			g.setPaint(new Color(255,140,0));  //dark orange
+			return weight-25;
+		}
+		if(weight>=50 && weight <75)
+		{
+			g.setPaint(new Color(255,0,0)); //red
+
 			return weight-50;
 		}
-		if(weight>=100 && weight <150)
+		if(weight>=75 && weight <100)
 		{
-			g.setPaint(Color.red);
+			g.setPaint(new Color(128,0,0));  //Maroon
+			
+			return weight-75;
+		}
+		if(weight>=100 && weight <125)
+		{
+			g.setPaint(new Color(240,230,140)); //khaki
+			
 			return weight-100;
 		}
-		if(weight>=150 && weight <200)
+		if(weight>=125 && weight <150)
 		{
-			g.setPaint(Color.yellow);
+			g.setPaint(new Color(255,255,0)); // yellow
+		
+			return weight-125;
+		}
+		if(weight>=150 && weight <175)
+		{
+			g.setPaint(new Color(124,252,0)); //lawn green
+			
 			return weight-150;
 		}
-		if(weight>=200 && weight <250)
+		if(weight>=175 && weight <200)
 		{
-			g.setPaint(Color.green);
+			g.setPaint(new Color(0,255,127));  //spring green
+		
+			return weight-175;
+		}
+		if(weight>=200 && weight <225)
+		{
+			g.setPaint(new Color(0,100,0)); //dark green
+			
 			return weight-200;
 		}
-		if(weight>=250 && weight <300)
+		if(weight>=225 && weight <250)
 		{
-			g.setPaint(Color.gray);
+			g.setPaint(new Color(188,143,143));  //rosy brown
+			
+			return weight-225;
+		}
+		if(weight>=250 && weight <275)
+		{
+			g.setPaint(new Color(139,69,19)); //saddle brown
+
 			return weight-250;
 		}
-		if(weight>=300 && weight <350)
+		if(weight>=275 && weight <300)
 		{
-			g.setPaint(Color.blue);
+			g.setPaint(new Color(0,255,255)); //cyan
+
+			return weight-275;
+		}
+		if(weight>=300 && weight <325)
+		{
+			g.setPaint(new Color(0,128,128)); //Teal
+
 			return weight-300;
 		}
-		if(weight>=350 && weight <400)
+		if(weight>=325 && weight <350)
 		{
-			g.setPaint(Color.pink);
+			g.setPaint(new Color(0,0,128));  //navy blue
+
+			return weight-325;
+		}
+		if(weight>=350 && weight <375)
+		{
+			g.setPaint(new Color(255,182,193));  //light pink
+
 			return weight-350;
 		}
-		if(weight>=400 && weight <450)
+		if(weight>=375 && weight <400)
 		{
-			g.setPaint(Color.black);
+			g.setPaint(new Color(255,20,147)); //deep pink
+
+			return weight-375;
+		}
+		if(weight>=400 && weight <425)
+		{
+			g.setPaint(new Color(148,0,211)); //dark violet
+
 			return weight-400;
 		}
-		if(weight>=450 && weight <500)
+		if(weight>=425 && weight <450)  
 		{
-			g.setPaint(Color.cyan);
+			g.setPaint(new Color(105,105,105)); //dim gray
+
+			return weight-425;
+		}
+		if(weight>=450 && weight <475)
+		{
+			g.setPaint(new Color(0,0,0)); //black
 			return weight-450;
 		}
-		else
+		if(weight>=475 && weight <500)
 		{
-			g.setPaint(Color.cyan);
+			g.setPaint(new Color(0,0,0)); //black
+			return weight-475;
+		}
+		if(weight>=500 && weight <525)
+		{
+			g.setPaint(new Color(0,0,0)); //black
 			return weight-500;
 		}
-		
+		else
+			
+		{
+			g.setPaint(new Color(0,51,51)); //strange shade of blue
+			return weight-525;
+		}
 	}
 	public static void main(String s[]) 
 	{

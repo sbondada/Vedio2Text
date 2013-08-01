@@ -61,7 +61,7 @@ public class Testfirstmethod {
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		SVOextracter svo=new SVOextracter();
 		EdgeWeightGen e = new EdgeWeightGen();
-		svo.sentenceSplit(lp,"processedoutput/testsent.txt");
+		svo.sentenceSplit(lp,"descriptions.txt");
 		// the out put is collected to a file for further review
 		PrintStream out;
 		PrintStream stdout=System.out;
@@ -102,7 +102,7 @@ public class Testfirstmethod {
 			ex.printStackTrace();
 		}
 		System.setOut(stdout);  
-		g.getSynset(svo, tpgraph,2);
+		g.getSynset(svo, tpgraph,1);
 		e.assignEdgeweight(tpgraph,g);
 		// this the code to call the Applet
 		ViewGraph v=new ViewGraph(tpgraph);

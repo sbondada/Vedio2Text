@@ -54,7 +54,8 @@ public class Testsecondmethod {
 		HypGen h=new HypGen();
 		LexicalizedParser lp = LexicalizedParser.loadModel("edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz");
 		SVOextracter svo=new SVOextracter();
-		svo.sentenceSplit(lp,"processedoutput/testsent.txt");
+		EdgeWeightGen e = new EdgeWeightGen();
+		svo.sentenceSplit(lp,"descriptions.txt");
 		// the out put is collected to a file for further review
 		PrintStream out;
 		PrintStream stdout=System.out;
@@ -96,11 +97,13 @@ public class Testsecondmethod {
 		}
 		System.setOut(stdout);  
 		h.getCollectionSimilarity(svo, tpgraph);	
-		Iterator<Entry<String,Double>> subitr=h.subj.entrySet().iterator();
-		while(subitr.hasNext())
+		e.assignEdgeweight(tpgraph,h);
+		Iterator<Entry<String,Double>> verbitr=h.verb.entrySet().iterator();
+		while(verbitr.hasNext())
 		{
-			Entry<String,Double> sub=subitr.next();
-			System.out.println(sub.getKey()+"----"+sub.getValue());
+			Entry<String,Double> verb=verbitr.next();
+			System.out.println(verb.getKey()+"----"+verb.getValue());
 		}
+		
 	}
 }

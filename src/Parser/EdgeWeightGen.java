@@ -22,7 +22,7 @@ public class EdgeWeightGen
 			Iterator<Entry<String,Integer>> SV=s.subjverb.entrySet().iterator();
 			System.out.println("\n======================================SUBJECT-VERB EDGE==============================================\n");
 			System.out.println("\tWeight\t\t\tConnection name\n");
-			
+
 			while(SV.hasNext())
 			{
 				Entry<String,Integer> SVentry=SV.next();
@@ -63,8 +63,51 @@ public class EdgeWeightGen
 			}
 			System.setOut(stdout);
 		}
-		catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+		catch (FileNotFoundException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	public void assignEdgeweight(TriPartiteGraph t,HypGen h)
+	{
+		PrintStream out;
+		PrintStream stdout=System.out;
+		try 
+		{
+			out = new PrintStream(new FileOutputStream("edgewtoutput.txt"));
+			System.setOut(out);
+			System.out.println("\n======================================SUBJECT-VERB EDGE==============================================\n");
+			System.out.println("\tWeight\t\t\tConnection name\n");
+			Iterator<Entry<String,Double>> S = 	h.subj.entrySet().iterator();
+			while(S.hasNext())
+			{
+				Entry<String,Double> sub = S.next();
+				Iterator<Entry<String,Double>> V =h.verb.entrySet().iterator();
+				while(V.hasNext())
+				{
+					Entry<String,Double> verb= V.next();
+					t.getsubcol().getNodeCollection().get(sub.getKey()).getConnectionMap().get(sub.getKey()+"-"+verb.getKey()).setweight((int)(sub.getValue()*verb.getValue()));
+					System.out.println("\t"+(int)(sub.getValue()*verb.getValue())+"\t\t\t"+(sub.getKey()+"-"+verb.getKey()));
+				}
+			}
+			System.out.println("\n======================================VERB-OBJECT EDGE==============================================\n");
+			System.out.println("\tWeight\t\t\tConnection name\n");
+			Iterator<Entry<String,Double>> V = 	h.verb.entrySet().iterator();
+			while(V.hasNext())
+			{
+				Entry<String,Double> verb = V.next();
+				Iterator<Entry<String,Double>> O =h.obj.entrySet().iterator();
+				while(O.hasNext())
+				{
+					Entry<String,Double> obj= O.next();
+					t.getverbcol().getNodeCollection().get(verb.getKey()).getConnectionMap().get(verb.getKey()+"-"+obj.getKey()).setweight((int)(verb.getValue()*obj.getValue()));
+					System.out.println("\t"+(int)(verb.getValue()*obj.getValue())+"\t\t\t"+(verb.getKey()+"-"+obj.getKey()));
+				}
+			}
+			System.setOut(stdout);
+		}
+		catch (FileNotFoundException e) 
+		{
 			e.printStackTrace();
 		}
 	}
